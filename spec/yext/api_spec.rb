@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe Yext::Api do
   it "has a version number" do
     expect(Yext::Api::VERSION).not_to be nil

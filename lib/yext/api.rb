@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "yext/api/version"
 
 module Yext
