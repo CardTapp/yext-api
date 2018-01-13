@@ -9,4 +9,17 @@
 
 # rspec failure tracking
 .rspec_status
+
+# spec dummy project
+log/*.log
+spec/dummy/db/*.sqlite3
+spec/dummy/db/*.sqlite3-journal
+spec/dummy/log/*.log
+spec/dummy/tmp/
+
+# RubyMine IDE
 .idea/
+
+# Cornucopia
+/spec/dummy/cornucopia_report/
+/cornucopia_report/
