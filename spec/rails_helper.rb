@@ -21,8 +21,15 @@ require File.expand_path("../dummy/config/environment", __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require "spec_helper"
 require "rspec/rails"
+require "hashie"
+require "vcr"
+require "webmock/rspec"
+
 # require "fakeredis/rspec"
 # require "factory_girl"
+
+Dir[Yext::Api::Engine.root.join("spec/shared_examples/**/*.rb")].sort.each { |f| require f }
+Dir[Yext::Api::Engine.root.join("spec/support/**/*.rb")].sort.each { |f| require f }
 
 require "cornucopia"
 require "cornucopia/rspec_hooks"

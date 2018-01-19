@@ -24,6 +24,8 @@ RAILS_USED.each do |railtie|
   begin
     require railtie
   rescue LoadError => e
+    # :nocov:
     Rails.logger.error e
+    # :nocov:
   end
 end

@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# rubocop:disable BlockLength
+
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "yext/api/version"
@@ -30,14 +32,20 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "rails", "~> 5.1.2"
+  spec.add_dependency "spyke", "~> 5"
 
   spec.add_development_dependency "bundler", "~> 1.16"
   spec.add_development_dependency "cornucopia"
   # spec.add_development_dependency "dotenv", "~> 2.0"
   # spec.add_development_dependency "dotenv-rails"
+  spec.add_development_dependency "hashie"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency "rspec-rails"
   spec.add_development_dependency "simplecov"
   spec.add_development_dependency "simplecov-rcov"
+  spec.add_development_dependency "vcr"
+  spec.add_development_dependency "webmock"
 end
+
+# rubocop:enable BlockLength

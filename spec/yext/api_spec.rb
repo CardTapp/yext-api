@@ -7,7 +7,13 @@ RSpec.describe Yext::Api do
     expect(Yext::Api::VERSION).not_to be nil
   end
 
-  it "does something useful" do
-    expect(false).to eq(true)
+  it "configuration returns the Configuration instance" do
+    expect(Yext::Api.configuration).to eq Yext::Api::Utils::Configuration.instance
+  end
+
+  it "configure returns the Configuration instance" do
+    Yext::Api.configure do |configuration|
+      expect(configuration).to eq Yext::Api::Utils::Configuration.instance
+    end
   end
 end

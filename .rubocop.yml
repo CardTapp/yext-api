@@ -85,3 +85,16 @@ Layout/IndentHash:
   # By default, the indentation width from `Layout/IndentationWidth` is used
   # But it can be overridden by setting this parameter
   IndentationWidth: 4
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*
+
+Layout/MultilineOperationIndentation:
+  EnforcedStyle: indented
+  SupportedStyles:
+    - aligned
+    - indented
+  # By default, the indentation width from `Layout/IndentationWidth` is used
+  # But it can be overridden by setting this parameter
+  IndentationWidth: 2
