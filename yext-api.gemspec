@@ -9,12 +9,12 @@ require "yext/api/version"
 Gem::Specification.new do |spec|
   spec.name    = "yext-api"
   spec.version = Yext::Api::VERSION
-  spec.authors = ["RealNobody"]
-  spec.email   = ["RealNobody1@cox.net"]
+  spec.authors = ["CardTapp"]
+  spec.email   = ["dustin@cardtapp.com"]
 
   spec.summary     = "An interface gem to the Yext API."
   spec.description = "A straightforward simple interface with the Yext API v2."
-  spec.homepage    = "https://github.com/RealNobody/yext-api"
+  spec.homepage    = "https://github.com/CardTapp/yext-api"
   spec.license     = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
