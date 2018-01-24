@@ -28,7 +28,7 @@ module Yext
       #           :comment: Gets the primary profile for a single Location.
       #           :sandbox_only: false
       class Location < Yext::Api::Utils::ApiBase
-        include Yext::Api::Concerns::Account
+        include Yext::Api::Concerns::AccountChild
 
         live_api
       end

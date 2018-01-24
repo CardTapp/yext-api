@@ -49,6 +49,7 @@ module Yext
 
           # yext_response_json = MultiJson.load(body, symbolize_keys: true)
           return {} if body.starts_with?("<html")
+          return { data: [{ response_string: body }], metadata: {}, errors: {} } unless body.starts_with?("{")
 
           yext_response_json = JSON.parse(body, symbolize_names: true)
 

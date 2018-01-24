@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.yext.com/v2/accounts/fake_account_id/addrequests?api_key=fake_api_key&v=20161012
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.13.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Wed, 24 Jan 2018 20:39:11 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '1661'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '1000'
+      rate-limit-remaining:
+      - '998'
+      rate-limit-reset:
+      - '1516827600'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"f0c2c2e3-ffe5-4227-b790-9519356ba81c","errors":[]},"response":{"addRequests":[{"id":223779,"locationMode":"EXISTING","existingLocationId":"ct-mukilteo","skus":["DEV-00010001"],"agreementId":3338,"status":"COMPLETE","dateSubmitted":"2018-01-10T17:57:34","dateCompleted":"2018-01-10T17:57:34","statusDetail":"The
+        request was completed and the specified services were started."},{"id":223698,"locationMode":"NEW","newLocationId":"65465465","newLocationAccountId":"5465456","skus":["DEV-00010000"],"agreementId":3338,"status":"COMPLETE","dateSubmitted":"2018-01-09T16:16:20","dateCompleted":"2018-01-09T16:16:21","statusDetail":"The
+        request was completed and the specified services were started. Account ID
+        5465456 was created by this request. Location ID 65465465 was created in this
+        request."},{"id":223571,"locationMode":"NEW","newLocationId":"ct-mukilteo","newLocationAccountId":"ct-dustin","skus":["DEV-00010000"],"agreementId":3338,"status":"COMPLETE","dateSubmitted":"2018-01-05T17:55:30","dateCompleted":"2018-01-05T17:55:30","statusDetail":"The
+        request was completed and the specified services were started. Account ID
+        ct-dustin was created by this request. Location ID ct-mukilteo was created
+        in this request."},{"id":223423,"locationMode":"NEW","newLocationId":"ctpinck","newLocationAccountId":"ctpinck","skus":["DEV-00010000"],"agreementId":3338,"status":"COMPLETE","dateSubmitted":"2018-01-03T17:13:16","dateCompleted":"2018-01-03T17:13:16","statusDetail":"The
+        request was completed and the specified services were started. Account ID
+        ctpinck was created by this request. Location ID ctpinck was created in this
+        request."}],"count":4}}'
+    http_version: 
+  recorded_at: Wed, 24 Jan 2018 20:39:11 GMT
+recorded_with: VCR 4.0.0

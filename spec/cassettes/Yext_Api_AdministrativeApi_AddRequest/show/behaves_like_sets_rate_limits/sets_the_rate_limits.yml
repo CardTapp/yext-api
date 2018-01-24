@@ -1,0 +1,39 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.yext.com/v2/accounts/fake_account_id/addrequests/223779?api_key=fake_api_key&v=20161012
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.13.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Wed, 24 Jan 2018 20:41:40 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '377'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '1000'
+      rate-limit-remaining:
+      - '995'
+      rate-limit-reset:
+      - '1516827600'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"ccc740b8-aa68-4f43-818a-b1fe6ebd5b90","errors":[]},"response":{"id":223779,"locationMode":"EXISTING","existingLocationId":"ct-mukilteo","skus":["DEV-00010001"],"agreementId":3338,"status":"COMPLETE","dateSubmitted":"2018-01-10T17:57:34","dateCompleted":"2018-01-10T17:57:34","statusDetail":"The
+        request was completed and the specified services were started."}}'
+    http_version: 
+  recorded_at: Wed, 24 Jan 2018 20:41:40 GMT
+recorded_with: VCR 4.0.0

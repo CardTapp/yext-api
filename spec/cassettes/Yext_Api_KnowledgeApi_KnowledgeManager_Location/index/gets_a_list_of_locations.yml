@@ -1,0 +1,38 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.yext.com/v2/accounts/fake_account_id/locations?Id=fred&api_key=fake_api_key&v=20161012
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.13.1
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Wed, 24 Jan 2018 17:32:01 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '106'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '5000'
+      rate-limit-remaining:
+      - '4999'
+      rate-limit-reset:
+      - '1516816800'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"a571216e-f76a-4c8c-8f61-44bded129941","errors":[]},"response":{"count":0,"locations":[]}}'
+    http_version: 
+  recorded_at: Wed, 24 Jan 2018 17:32:02 GMT
+recorded_with: VCR 4.0.0

@@ -49,6 +49,30 @@ RSpec.describe Yext::Api::Utils::ApiRateLimits do
         expect(not_module.rate_limit_reset_at).to be_nil
       end
     end
+
+    it "does not change the #{api_module.name} rate limits for #{object_name}.#{action[:action]} if the header is missing" do
+      api_module.update_rates limit: limit, remaining: remaining, reset_at: reset_at
+
+      response_environment[:response_headers] = {}
+
+      url = action[:endpoint].delete("{")
+      url = url.delete("}")
+
+      env[:url]    = URI.parse(url)
+      env[:method] = action[:method]
+
+      rate_limits.call(env)
+
+      expect(api_module.rate_limit_limit).to eq limit
+      expect(api_module.rate_limit_remaining).to eq remaining
+      expect(api_module.rate_limit_reset_at).to be_within(1.second).of(reset_at)
+
+      (all_modules - [api_module]).each do |not_module|
+        expect(not_module.rate_limit_limit).to eq 0
+        expect(not_module.rate_limit_remaining).to eq 0
+        expect(not_module.rate_limit_reset_at).to be_nil
+      end
+    end
   end
 
   hash = YAML.load_file(Yext::Api::Engine.root.join("lib/config/api.yml"))

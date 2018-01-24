@@ -28,10 +28,10 @@ module Yext
       #         :comment: Cancel one or more active services.
       #         :sandbox_only: false
       class Service < Yext::Api::Utils::ApiBase
-        include Yext::Api::Concerns::Account
+        include Yext::Api::Concerns::AccountChild
 
-        scope :available, -> { with(Yext::Api::Concerns::Account.account_path("availableservices")) }
-        scope :cancel_services, -> { with(Yext::Api::Concerns::Account.account_path("cancelservices")) }
+        scope :available, -> { with(Yext::Api::Concerns::AccountChild.with_account_path("availableservices")) }
+        scope :cancel_services, -> { with(Yext::Api::Concerns::AccountChild.with_account_path("cancelservices")) }
       end
     end
   end

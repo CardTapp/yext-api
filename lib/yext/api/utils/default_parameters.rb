@@ -24,7 +24,6 @@ module Yext
           add_username_headers(request_env, configuration, params)
           add_default_query_params(configuration, params)
           save_query_params(url, params)
-          add_account_id(url, configuration)
 
           @app.call(request_env)
         end
@@ -40,17 +39,6 @@ module Yext
 
         def save_query_params(url, params)
           url.query = params.to_query
-        end
-
-        def add_account_id(url, configuration)
-          path    = url.path
-          matches = path.match(%r{accounts/(\+(.*?)\+)/})
-
-          return if matches.blank?
-
-          account_id = matches[-1]
-          account_id = configuration.account_id || "me" if account_id.blank?
-          url.path   = path.gsub(matches[-2], account_id)
         end
 
         def add_username_headers(request_env, configuration, params)

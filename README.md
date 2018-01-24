@@ -162,6 +162,24 @@ other_account_services = Yext::Api::AdministrativeApi::Service.with_account("666
 available_services = Yext::Api::AdministrativeApi::Service.available.to_a
 ```
 
+#### API Rate Limits
+
+Yext returns rate limit information for each call.  This information is different for each category of
+API call, so it is stored in the base Namespace for each call.
+
+NOTE:  Accounts are listed in the API documentation in both the `AdministrativeApi` and the `KnowledgeApi`
+namespaces.  The `index` and `get` options are available in both locations, but the rate limites are
+ONLY recorded in `KnowledgeApi`.
+
+```ruby
+Yext::Api::AdministrativeApi::Service.all.to_a
+
+# Now the following values are set based on the response.
+Yext::Api::AdministrativeApi.rate_limit_limit
+Yext::Api::AdministrativeApi.rate_limit_remaining
+Yext::Api::AdministrativeApi.rate_limit_reset_at
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the

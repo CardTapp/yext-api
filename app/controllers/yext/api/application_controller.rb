@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# :nocov:
 module Yext
   module Api
     # The base class for the Engines controllers.
@@ -8,3 +9,4 @@ module Yext
     end
   end
 end
+# :nocov:
