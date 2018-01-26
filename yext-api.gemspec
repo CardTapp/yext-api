@@ -35,6 +35,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "spyke", "~> 5"
 
   spec.add_development_dependency "bundler"
+  spec.add_development_dependency "codecov"
   spec.add_development_dependency "cornucopia"
   # spec.add_development_dependency "dotenv", "~> 2.0"
   # spec.add_development_dependency "dotenv-rails"

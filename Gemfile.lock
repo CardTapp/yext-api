@@ -49,6 +49,10 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     arel (8.0.0)
     builder (3.2.3)
+    codecov (0.1.10)
+      json
+      simplecov
+      url
     concurrent-ruby (1.0.5)
     cornucopia (0.1.40)
       activesupport
@@ -157,6 +161,7 @@ GEM
     thread_safe (0.3.6)
     tzinfo (1.2.4)
       thread_safe (~> 0.1)
+    url (0.3.2)
     vcr (4.0.0)
     webmock (3.2.1)
       addressable (>= 2.3.6)
@@ -171,6 +176,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler
+  codecov
   cornucopia
   gem-release
   hashie
@@ -184,4 +190,4 @@ DEPENDENCIES
   yext-api!
 
 BUNDLED WITH
-   1.16.0
+   1.16.1

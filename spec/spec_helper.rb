@@ -26,7 +26,27 @@ require "bundler/setup"
 require "active_support"
 require "active_support/core_ext"
 
+if ENV["CI"] == "true"
+  require "simplecov"
+  require "codecov"
+  SimpleCov.start do |_file|
+    adapters.delete(:root_filter)
+    filters.clear
+    add_filter do |src|
+      puts src.filename
+      src.filename !~ /yext-api/ unless src.filename =~ /\/app\//
+    end
+  end
+  SimpleCov.formatter = SimpleCov::Formatter::Codecov
+
+end
+
 RSpec.configure do |config|
+  config.before(:suite) do
+    if ENV["CI"] == "true"
+
+    end
+  end
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
