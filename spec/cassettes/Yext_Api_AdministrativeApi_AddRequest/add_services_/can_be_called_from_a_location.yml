@@ -1,0 +1,233 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.yext.com/v2/accounts/fake_account_id/cancelservices?api_key=fake_api_key&v=20161012
+    body:
+      encoding: UTF-8
+      string: '{"locationId":"my-test-location-id-2"}'
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Thu, 08 Feb 2018 00:07:33 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '283'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '1000'
+      rate-limit-remaining:
+      - '999'
+      rate-limit-reset:
+      - '1518051600'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"75974d3d-ce53-4847-a21b-1403f5b58390","errors":[]},"response":[{"id":148937,"sku":"DEV-00010000","serviceDescription":"Location
+        Cloud Starter","agreementId":3338,"locationId":"my-test-location-id-2","status":"STOPPED","started":"2018-02-07","stopped":"2018-02-07"}]}'
+    http_version: 
+  recorded_at: Thu, 08 Feb 2018 00:07:33 GMT
+- request:
+    method: get
+    uri: https://sandbox.yext.com/v2/accounts/my-test-account-id-2/locations/my-test-location-id-2?api_key=fake_api_key&v=20161012
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Thu, 08 Feb 2018 00:07:34 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '827'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '5000'
+      rate-limit-remaining:
+      - '4999'
+      rate-limit-reset:
+      - '1518051600'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"4b64baba-59b9-4524-b4e4-f6a6712cf81c","errors":[]},"response":{"id":"my-test-location-id-2","uid":"EZZJa","timestamp":1517336435360,"accountId":"my-test-account-id-2","locationName":"RSpec
+        Test Location 2","address":"2756 Morning glory Cir.","address2":"Suite 200","city":"Boston","state":"AL","zip":"90410","countryCode":"US","language":"en","suppressAddress":true,"phone":"4255551211","isPhoneTracked":false,"categoryIds":["1146752"],"featuredMessage":"This
+        is so cool too!","featuredMessageUrl":"https://www.cardtapp.com/buy","websiteUrl":"https://www.cardtapp.com","description":"My
+        cool RSpec location","yextDisplayLat":29.6708315,"yextDisplayLng":-95.15773689999999,"yextRoutableLat":34.010932,"yextRoutableLng":-118.491512,"emails":["2@2.com"],"folderId":"0","locationType":"LOCATION","schemaTypes":[]}}'
+    http_version: 
+  recorded_at: Thu, 08 Feb 2018 00:07:34 GMT
+- request:
+    method: post
+    uri: https://sandbox.yext.com/v2/accounts/fake_account_id/existinglocationaddrequests?api_key=fake_api_key&v=20161012
+    body:
+      encoding: UTF-8
+      string: '{"existingAccountId":"my-test-account-id-2","existingLocationId":"my-test-location-id-2","skus":["DEV-00010000"]}'
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Thu, 08 Feb 2018 00:07:35 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '423'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '1000'
+      rate-limit-remaining:
+      - '998'
+      rate-limit-reset:
+      - '1518051600'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"e27621d9-ba43-4e72-9fa8-bdc1954751d5","errors":[]},"response":{"id":225546,"locationMode":"EXISTING","existingLocationId":"my-test-location-id-2","newLocationAccountName":"","skus":["DEV-00010000"],"agreementId":3338,"status":"SUBMITTED","dateSubmitted":"2018-02-07T19:07:35","statusDetail":"The
+        request has been submitted for processing. Updated status should be available
+        soon, usually within seconds."}}'
+    http_version: 
+  recorded_at: Thu, 08 Feb 2018 00:07:35 GMT
+- request:
+    method: post
+    uri: https://sandbox.yext.com/v2/accounts/fake_account_id/cancelservices?api_key=fake_api_key&v=20161012
+    body:
+      encoding: UTF-8
+      string: '{"locationId":"my-test-location-id-2"}'
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Thu, 08 Feb 2018 01:10:49 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '283'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '1000'
+      rate-limit-remaining:
+      - '993'
+      rate-limit-reset:
+      - '1518055200'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"224224fb-a28d-4778-91f5-17c384365cde","errors":[]},"response":[{"id":148948,"sku":"DEV-00010000","serviceDescription":"Location
+        Cloud Starter","agreementId":3338,"locationId":"my-test-location-id-2","status":"STOPPED","started":"2018-02-07","stopped":"2018-02-07"}]}'
+    http_version: 
+  recorded_at: Thu, 08 Feb 2018 01:10:49 GMT
+- request:
+    method: get
+    uri: https://sandbox.yext.com/v2/accounts/my-test-account-id-2/locations/my-test-location-id-2?api_key=fake_api_key&v=20161012
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Thu, 08 Feb 2018 01:10:51 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '827'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '5000'
+      rate-limit-remaining:
+      - '4999'
+      rate-limit-reset:
+      - '1518055200'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"7fc95599-5e0a-4d7f-9d1a-75e4a2b131cc","errors":[]},"response":{"id":"my-test-location-id-2","uid":"EZZJa","timestamp":1517336435360,"accountId":"my-test-account-id-2","locationName":"RSpec
+        Test Location 2","address":"2756 Morning glory Cir.","address2":"Suite 200","city":"Boston","state":"AL","zip":"90410","countryCode":"US","language":"en","suppressAddress":true,"phone":"4255551211","isPhoneTracked":false,"categoryIds":["1146752"],"featuredMessage":"This
+        is so cool too!","featuredMessageUrl":"https://www.cardtapp.com/buy","websiteUrl":"https://www.cardtapp.com","description":"My
+        cool RSpec location","yextDisplayLat":29.6708315,"yextDisplayLng":-95.15773689999999,"yextRoutableLat":34.010932,"yextRoutableLng":-118.491512,"emails":["2@2.com"],"folderId":"0","locationType":"LOCATION","schemaTypes":[]}}'
+    http_version: 
+  recorded_at: Thu, 08 Feb 2018 01:10:51 GMT
+- request:
+    method: post
+    uri: https://sandbox.yext.com/v2/accounts/fake_account_id/existinglocationaddrequests?api_key=fake_api_key&v=20161012
+    body:
+      encoding: UTF-8
+      string: '{"existingAccountId":"my-test-account-id-2","existingLocationId":"my-test-location-id-2","skus":["DEV-00010000"]}'
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Thu, 08 Feb 2018 01:10:52 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '423'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '1000'
+      rate-limit-remaining:
+      - '992'
+      rate-limit-reset:
+      - '1518055200'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"65169ce7-7a7d-4bd1-ad1e-7958ff286886","errors":[]},"response":{"id":225557,"locationMode":"EXISTING","existingLocationId":"my-test-location-id-2","newLocationAccountName":"","skus":["DEV-00010000"],"agreementId":3338,"status":"SUBMITTED","dateSubmitted":"2018-02-07T20:10:52","statusDetail":"The
+        request has been submitted for processing. Updated status should be available
+        soon, usually within seconds."}}'
+    http_version: 
+  recorded_at: Thu, 08 Feb 2018 01:10:52 GMT
+recorded_with: VCR 4.0.0

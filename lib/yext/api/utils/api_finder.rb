@@ -60,7 +60,7 @@ module Yext
         end
 
         def find_class_in_module(built_name, sub_detail_name, sub_detail)
-          possible_name = construct_build_name(built_name, sub_detail_name)
+          possible_name = construct_build_name(built_name, sub_detail_name, sub_detail)
 
           if sub_detail_name == :objects
             sub_detail.each do |class_name, class_actions|
@@ -73,10 +73,13 @@ module Yext
           end
         end
 
-        def construct_build_name(built_name, sub_detail_name)
+        def construct_build_name(built_name, sub_detail_name, sub_detail)
           return built_name if %i[documentation objects].include?(sub_detail_name)
 
-          "#{built_name}::#{sub_detail_name.to_s.classify}"
+          name = sub_detail_name.to_s.classify
+          name = sub_detail[:module_name] if sub_detail.is_a?(Hash) && sub_detail[:module_name].present?
+
+          "#{built_name}::#{name}"
         end
 
         def action_found?(actions)

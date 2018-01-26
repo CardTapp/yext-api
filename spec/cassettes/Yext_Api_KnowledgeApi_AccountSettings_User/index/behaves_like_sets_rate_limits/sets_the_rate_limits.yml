@@ -1,0 +1,42 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.yext.com/v2/accounts/fake_account_id/users?api_key=fake_api_key&v=20161012
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Fri, 02 Feb 2018 01:31:17 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '1443'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '5000'
+      rate-limit-remaining:
+      - '4995'
+      rate-limit-reset:
+      - '1517536800'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"a199cf66-482d-4509-849f-3ec6954bca6b","errors":[]},"response":{"count":5,"users":[{"id":"1168701","firstName":"CardTapp","lastName":"Development","username":"yext_development@cardtapp.com","emailAddress":"yext_development@cardtapp.com","phoneNumber":"","lastLoginDate":"1517461200","sso":false,"acl":[]},{"id":"1176513","firstName":"CardTapp","lastName":"Development","username":"development@cardtapp.com","emailAddress":"development@cardtapp.com","phoneNumber":"","lastLoginDate":"1517202000","sso":false,"acl":[{"roleId":"1","roleName":"Full
+        Control","on":"fake_account_id","accountId":"fake_account_id","onType":"ACCOUNT"}]},{"id":"1176514","firstName":"Erik","lastName":"Littell","username":"elittell@cardtapp.com","emailAddress":"elittell@cardtapp.com","phoneNumber":"","lastLoginDate":"1517202000","sso":false,"acl":[{"roleId":"1","roleName":"Full
+        Control","on":"fake_account_id","accountId":"fake_account_id","onType":"ACCOUNT"}]},{"id":"1176515","firstName":"Pascal","lastName":"Pinck","username":"ppinck@cardtapp.com","emailAddress":"ppinck@cardtapp.com","phoneNumber":"","sso":false,"acl":[{"roleId":"1","roleName":"Full
+        Control","on":"fake_account_id","accountId":"fake_account_id","onType":"ACCOUNT"}]},{"id":"1188779","firstName":"TJ","lastName":"Duffy","username":"tduffy@cardtapp.com","emailAddress":"tduffy@cardtapp.com","phoneNumber":"","sso":false,"acl":[{"roleId":"1","roleName":"Full
+        Control","on":"fake_account_id","accountId":"fake_account_id","onType":"ACCOUNT"}]}]}}'
+    http_version: 
+  recorded_at: Fri, 02 Feb 2018 01:31:17 GMT
+recorded_with: VCR 4.0.0

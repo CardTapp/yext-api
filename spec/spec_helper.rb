@@ -34,7 +34,7 @@ if ENV["CI"] == "true"
     filters.clear
     add_filter do |src|
       puts src.filename
-      src.filename !~ /yext-api/ unless src.filename =~ /\/app\//
+      src.filename !~ /yext-api/ unless src.filename =~ %r{/app/}
     end
   end
   SimpleCov.formatter = SimpleCov::Formatter::Codecov

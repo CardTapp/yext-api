@@ -13,7 +13,6 @@ module Yext
         #           :endpoint: https://api.yext.com/v2/categories
         #           :default_version: 20161012
         #           :documentation: http://developer.yext.com/docs/api-reference/#operation/getBusinessCategories
-        #           :comment: Get available Categories.
         #           :sandbox_only: false
         #
         # Class for fetching categories

@@ -10,7 +10,14 @@ module Yext
                     :rate_limit_limit,
                     :rate_limit_reset_at,
                     :last_status,
-                    :last_meta
+                    :last_meta,
+                    :last_data
+
+        private
+
+        def last_data=(last_data)
+          @last_data = last_data
+        end
 
         def last_status=(last_status)
           @last_status = last_status

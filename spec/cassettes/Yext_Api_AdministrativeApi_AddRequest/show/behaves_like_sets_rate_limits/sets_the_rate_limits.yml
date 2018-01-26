@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://sandbox.yext.com/v2/accounts/fake_account_id/addrequests/223779?api_key=fake_api_key&v=20161012
+    uri: https://sandbox.yext.com/v2/accounts/fake_account_id/addrequests/224757?api_key=fake_api_key&v=20161012
     body:
       encoding: US-ASCII
       string: ''
@@ -17,23 +17,26 @@ http_interactions:
       server:
       - nginx/1.10.2
       date:
-      - Fri, 26 Jan 2018 16:30:49 GMT
+      - Tue, 30 Jan 2018 23:41:55 GMT
       content-type:
       - application/json; charset=utf-8
       content-length:
-      - '377'
+      - '595'
       connection:
       - keep-alive
       rate-limit-limit:
       - '1000'
       rate-limit-remaining:
-      - '991'
+      - '996'
       rate-limit-reset:
-      - '1516986000'
+      - '1517356800'
     body:
       encoding: UTF-8
-      string: '{"meta":{"uuid":"0078991d-2bdd-4630-b4e6-7aeacb1a279a","errors":[]},"response":{"id":223779,"locationMode":"EXISTING","existingLocationId":"ct-mukilteo","skus":["DEV-00010001"],"agreementId":3338,"status":"COMPLETE","dateSubmitted":"2018-01-10T17:57:34","dateCompleted":"2018-01-10T17:57:34","statusDetail":"The
-        request was completed and the specified services were started."}}'
+      string: '{"meta":{"uuid":"9d6ee4fd-f284-448c-a718-88ee894d045c","errors":[]},"response":{"id":224757,"locationMode":"NEW","newLocationId":"my-test-location-id-2","newLocationAccountId":"my-test-account-id-2","newLocationAccountName":"RSpec
+        Test Account 2","skus":["DEV-00010000"],"agreementId":3338,"status":"COMPLETE","dateSubmitted":"2018-01-26T18:38:29","dateCompleted":"2018-01-30T13:20:33","statusDetail":"The
+        request was completed and the specified services were started. Account ID
+        my-test-account-id-2 was created by this request. Location ID my-test-location-id-2
+        was created in this request."}}'
     http_version: 
-  recorded_at: Fri, 26 Jan 2018 16:30:49 GMT
+  recorded_at: Tue, 30 Jan 2018 23:41:55 GMT
 recorded_with: VCR 4.0.0

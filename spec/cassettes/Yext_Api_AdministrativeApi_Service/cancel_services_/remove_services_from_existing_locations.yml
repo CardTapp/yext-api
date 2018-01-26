@@ -1,0 +1,157 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.yext.com/v2/accounts/fake_account_id/services?api_key=fake_api_key&v=20161012
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Sun, 04 Feb 2018 21:07:07 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '919'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '1000'
+      rate-limit-remaining:
+      - '987'
+      rate-limit-reset:
+      - '1517781600'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"20437773-4fbd-4c8b-bee9-d98f5fea03b7","errors":[]},"response":{"count":4,"services":[{"id":148712,"sku":"DEV-00010000","serviceDescription":"Location
+        Cloud Starter","agreementId":3338,"locationId":"my-test-location-id-2","locationAccountId":"my-test-account-id-2","status":"ACTIVE","started":"2018-02-04"},{"id":147468,"sku":"DEV-00010001","serviceDescription":"Location
+        Cloud Professional","agreementId":3338,"locationId":"ct-mukilteo","locationAccountId":"ct-dustin","status":"ACTIVE","started":"2018-01-10"},{"id":147392,"sku":"DEV-00010000","serviceDescription":"Location
+        Cloud Starter","agreementId":3338,"locationId":"65465465","locationAccountId":"5465456","status":"ACTIVE","started":"2018-01-09"},{"id":147173,"sku":"DEV-00010000","serviceDescription":"Location
+        Cloud Starter","agreementId":3338,"locationId":"ctpinck","locationAccountId":"ctpinck","status":"ACTIVE","started":"2018-01-03"}]}}'
+    http_version: 
+  recorded_at: Sun, 04 Feb 2018 21:07:07 GMT
+- request:
+    method: post
+    uri: https://sandbox.yext.com/v2/accounts/fake_account_id/cancelservices?api_key=fake_api_key&v=20161012
+    body:
+      encoding: UTF-8
+      string: '{"locationId":"my-test-location-id-2"}'
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Sun, 04 Feb 2018 21:07:08 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '283'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '1000'
+      rate-limit-remaining:
+      - '986'
+      rate-limit-reset:
+      - '1517781600'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"a3733322-b3e2-468c-8347-282e670f1453","errors":[]},"response":[{"id":148712,"sku":"DEV-00010000","serviceDescription":"Location
+        Cloud Starter","agreementId":3338,"locationId":"my-test-location-id-2","status":"STOPPED","started":"2018-02-04","stopped":"2018-02-04"}]}'
+    http_version: 
+  recorded_at: Sun, 04 Feb 2018 21:07:08 GMT
+- request:
+    method: get
+    uri: https://sandbox.yext.com/v2/accounts/fake_account_id/services?api_key=fake_api_key&v=20161012
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Sun, 04 Feb 2018 21:07:08 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '698'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '1000'
+      rate-limit-remaining:
+      - '985'
+      rate-limit-reset:
+      - '1517781600'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"c2d5b64f-dbf8-4cf9-855f-4fed6d8b0d2b","errors":[]},"response":{"count":3,"services":[{"id":147468,"sku":"DEV-00010001","serviceDescription":"Location
+        Cloud Professional","agreementId":3338,"locationId":"ct-mukilteo","locationAccountId":"ct-dustin","status":"ACTIVE","started":"2018-01-10"},{"id":147392,"sku":"DEV-00010000","serviceDescription":"Location
+        Cloud Starter","agreementId":3338,"locationId":"65465465","locationAccountId":"5465456","status":"ACTIVE","started":"2018-01-09"},{"id":147173,"sku":"DEV-00010000","serviceDescription":"Location
+        Cloud Starter","agreementId":3338,"locationId":"ctpinck","locationAccountId":"ctpinck","status":"ACTIVE","started":"2018-01-03"}]}}'
+    http_version: 
+  recorded_at: Sun, 04 Feb 2018 21:07:08 GMT
+- request:
+    method: post
+    uri: https://sandbox.yext.com/v2/accounts/fake_account_id/existinglocationaddrequests?api_key=fake_api_key&v=20161012
+    body:
+      encoding: UTF-8
+      string: '{"existingLocationId":"my-test-location-id-2","existingLocationAccountId":"my-test-account-id-2","skus":["DEV-00010000"]}'
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Sun, 04 Feb 2018 21:07:09 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '423'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '1000'
+      rate-limit-remaining:
+      - '984'
+      rate-limit-reset:
+      - '1517781600'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"8bf72c41-20b3-44f1-88a0-8c1cded6ab54","errors":[]},"response":{"id":225289,"locationMode":"EXISTING","existingLocationId":"my-test-location-id-2","newLocationAccountName":"","skus":["DEV-00010000"],"agreementId":3338,"status":"SUBMITTED","dateSubmitted":"2018-02-04T16:07:09","statusDetail":"The
+        request has been submitted for processing. Updated status should be available
+        soon, usually within seconds."}}'
+    http_version: 
+  recorded_at: Sun, 04 Feb 2018 21:07:09 GMT
+recorded_with: VCR 4.0.0

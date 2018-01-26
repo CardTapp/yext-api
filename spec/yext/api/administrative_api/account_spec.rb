@@ -11,7 +11,7 @@ RSpec.describe Yext::Api::AdministrativeApi::Account, :vcr do
 
     it "sets the KnowledgeApi rate limit" do
       [Yext::Api::LiveApi, Yext::Api::KnowledgeApi, Yext::Api::AdministrativeApi].each do |rate_module|
-        rate_module.update_rates(remaining: 0, limit: 0, reset_at: nil)
+        rate_module.send(:update_rates, remaining: 0, limit: 0, reset_at: nil)
       end
 
       Yext::Api::AdministrativeApi::Account.all.to_a
@@ -41,7 +41,7 @@ RSpec.describe Yext::Api::AdministrativeApi::Account, :vcr do
 
     it "sets the KnowledgeApi rate limit" do
       [Yext::Api::LiveApi, Yext::Api::KnowledgeApi, Yext::Api::AdministrativeApi].each do |rate_module|
-        rate_module.update_rates(remaining: 0, limit: 0, reset_at: nil)
+        rate_module.send(:update_rates, remaining: 0, limit: 0, reset_at: nil)
       end
 
       Yext::Api::AdministrativeApi::Account.find("ct-dustin")
@@ -64,16 +64,38 @@ RSpec.describe Yext::Api::AdministrativeApi::Account, :vcr do
     end
   end
 
-  describe "create" do
-    xit "creates an account"
-  end
-
-  describe "add_services" do
-  end
-
-  describe "change_status" do
-  end
-
+  # This test uses a previously created and completed account from the AddRequest tests.
   describe "update" do
+    let(:account) { Yext::Api::AdministrativeApi::Account.find("my-test-account-id-2") }
+
+    after(:each) do
+      account.accountId   = "my-test-account-id-2"
+      account.accountName = "RSpec Test Account 2"
+
+      account.save
+    end
+
+    it "does not update the id" do
+      account.accountId = "my-changed-test-account-id-2"
+
+      expect(account.account_id).to eq "my-test-account-id-2"
+
+      account.save
+
+      expect(account.account_id).to eq "my-changed-test-account-id-2"
+      expect(Yext::Api::AdministrativeApi.last_status).to eq 400
+    end
+
+    it "udpates the name" do
+      account.accountName = "RSpec Changed Test Account 2"
+
+      expect(account.account_id).to eq "my-test-account-id-2"
+
+      account.save
+      expect(Yext::Api::AdministrativeApi.last_status).to eq 200
+
+      updated_account = Yext::Api::AdministrativeApi::Account.find("my-test-account-id-2")
+      expect(updated_account.accountName).to eq "RSpec Changed Test Account 2"
+    end
   end
 end

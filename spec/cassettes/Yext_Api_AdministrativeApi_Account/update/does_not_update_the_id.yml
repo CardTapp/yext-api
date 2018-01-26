@@ -1,0 +1,115 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.yext.com/v2/accounts/my-test-account-id-2?api_key=fake_api_key&v=20161012
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Thu, 01 Feb 2018 21:13:20 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '346'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '5000'
+      rate-limit-remaining:
+      - '4988'
+      rate-limit-reset:
+      - '1517522400'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"00004e2b-0cb8-4ddf-9116-a4c2a0a2d022","errors":[]},"response":{"accountId":"my-test-account-id-2","locationCount":1,"subAccountCount":0,"parentAccountId":"fake_account_id","accountName":"RSpec
+        Test Account 2","contactFirstName":"CardTapp","contactLastName":"Development","contactPhone":"","contactEmail":"yext_development@cardtapp.com"}}'
+    http_version: 
+  recorded_at: Thu, 01 Feb 2018 21:13:20 GMT
+- request:
+    method: put
+    uri: https://sandbox.yext.com/v2/accounts/my-test-account-id-2?api_key=fake_api_key&v=20161012
+    body:
+      encoding: UTF-8
+      string: '{"accountName":"RSpec Test Account 2","accountId":"my-changed-test-account-id-2"}'
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Thu, 01 Feb 2018 21:13:26 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '174'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '5000'
+      rate-limit-remaining:
+      - '4987'
+      rate-limit-reset:
+      - '1517522400'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"cedda347-b925-4057-a009-a8e1a5eb9467","errors":[{"code":1002,"type":"FATAL_ERROR","message":"You
+        are not allowed to change a customer''s id"}]},"response":{}}'
+    http_version: 
+  recorded_at: Thu, 01 Feb 2018 21:13:26 GMT
+- request:
+    method: put
+    uri: https://sandbox.yext.com/v2/accounts/my-changed-test-account-id-2?api_key=fake_api_key&v=20161012
+    body:
+      encoding: UTF-8
+      string: '{"accountName":"RSpec Test Account 2","accountId":"my-test-account-id-2"}'
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Thu, 01 Feb 2018 21:13:52 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '153'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '5000'
+      rate-limit-remaining:
+      - '4986'
+      rate-limit-reset:
+      - '1517522400'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"b1005833-2eac-4f7e-9d59-1ceb12a0559e","errors":[{"code":1000,"type":"FATAL_ERROR","message":"Customer
+        not found: null"}]},"response":{}}'
+    http_version: 
+  recorded_at: Thu, 01 Feb 2018 21:13:52 GMT
+recorded_with: VCR 4.0.0

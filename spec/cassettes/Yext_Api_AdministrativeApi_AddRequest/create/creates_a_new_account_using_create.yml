@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.yext.com/v2/accounts/fake_account_id/newlocationaddrequests?api_key=fake_api_key&v=20161012
+    body:
+      encoding: UTF-8
+      string: '{"newLocationId":"my-test-location-id-2","newLocationAccountId":"my-test-account-id-2","newLocationAccountName":"RSpec
+        Test Account 2","skus":["DEV-00010000"],"forceReview":true,"newLocationData":{"id":"my-test-location-id-2","locationType":"LOCATION","locationName":"RSpec
+        Test Location 2","address":"2756 Morning glory Cir.","address2":"Suite 200","suppressAddress":true,"city":"Boston","state":"AL","zip":"90410","phone":"425-555-1211","categoryIds":["1146752"],"featuredMessage":"This
+        is so cool too!","featuredMessageUrl":"https://www.cardtapp.com/buy","websiteUrl":"https://www.cardtapp.com","description":"My
+        cool RSpec location","emails":["2@2.com"]}}'
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Fri, 26 Jan 2018 22:38:38 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '957'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '1000'
+      rate-limit-remaining:
+      - '999'
+      rate-limit-reset:
+      - '1517007600'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"10496123-72fb-42f3-8f60-bdc558743555","errors":[]},"response":{"id":224757,"locationMode":"NEW","newLocationId":"my-test-location-id-2","newLocationAccountId":"my-test-account-id-2","newLocationAccountName":"RSpec
+        Test Account 2","newLocationData":{"id":"my-test-location-id-2","locationName":"RSpec
+        Test Location 2","address":"2756 Morning glory Cir.","address2":"Suite 200","city":"Boston","state":"AL","zip":"90410",
+        "countryCode":"US","language":"en","suppressAddress":true,"phone":"425-555-1211","categoryIds":["1146752"],"featuredMessage":"This
+        is so cool too!","featuredMessageUrl":"https://www.cardtapp.com/buy","websiteUrl":"https://www.cardtapp.com","description":"My
+        cool RSpec location","emails":["2@2.com"],"locationType":"LOCATION"},"skus":["DEV-00010000"],"agreementId":3338,"status":"SUBMITTED","dateSubmitted":"2018-01-26T17:38:38","statusDetail":"The
+        request has been submitted for processing. Updated status should be available
+        soon, usually within seconds."}}'
+    http_version: 
+  recorded_at: Fri, 26 Jan 2018 22:38:38 GMT
+recorded_with: VCR 4.0.0

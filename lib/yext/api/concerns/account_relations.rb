@@ -13,16 +13,25 @@ module Yext
         # The module AccountChild will add these relations if they are missing, but if they are
         # listed explicitly it is more efficient.
         included do
+          # AdministrativeApi
           has_many :add_requests,
                    class_name: "Yext::Api::AdministrativeApi::AddRequest",
                    uri:        Yext::Api::Concerns::AccountChild.with_account_path("addrequests/(:id)")
-          has_many :locations, class_name: "Yext::Api::KnowledgeApi::KnowledgeManager::Location"
           has_many :services, class_name: "Yext::Api::AdministrativeApi::Service"
+
+          # KnowledgeApi::KnowledgeManager
+          has_many :locations, class_name: "Yext::Api::KnowledgeApi::KnowledgeManager::Location"
+
+          # KnowledgeApi::AccountSettings
+          has_many :users, class_name: "Yext::Api::KnowledgeApi::AccountSettings::User"
+
+          # LiveApi
+          has_many :live_locations, class_name: "Yext::Api::LiveApi::Location"
         end
 
         class_methods do
           def association?(klass)
-            associations.key?(klass.model_name.element.pluralize.to_sym)
+            associations.key?(Yext::Api::Concerns::AccountChild.association_name(klass).to_sym)
           end
         end
       end

@@ -35,7 +35,7 @@ module Yext
 
             klass = klass.constantize
 
-            klass.reset_uri
+            klass.reset_uri if klass.respond_to?(:reset_uri)
           rescue StandardError => error
             return unless Object.const_defined?("Rails")
 

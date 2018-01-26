@@ -28,16 +28,29 @@ module Yext
           end
         end
 
-        def self.faraday_connection(url)
-          Faraday.new(url: url) do |c|
-            c.request :json
+        class << self
+          def faraday_connection(url)
+            Faraday.new(url: url) do |c|
+              c.request :json
+              c.request :retry,
+                        max:                 2,
+                        interval:            0.05,
+                        interval_randomness: 0.5,
+                        backoff_factor:      2
 
+              add_middleware(c)
+
+              c.adapter Faraday.default_adapter
+            end
+          end
+
+          private
+
+          def add_middleware(c)
             c.use Yext::Api::Utils::Middleware::ResponseParser
             c.use Yext::Api::Utils::Middleware::DefaultParameters
             c.use Yext::Api::Utils::Middleware::ApiRateLimits
             c.use Yext::Api::Utils::Middleware::UriCleanup
-
-            c.adapter Faraday.default_adapter
           end
         end
       end

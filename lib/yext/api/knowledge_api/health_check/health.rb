@@ -14,7 +14,6 @@ module Yext
         #           :path_regex: v2/healthy
         #           :default_version: 20161012
         #           :documentation: http://developer.yext.com/docs/api-reference/#operation/healthCheck
-        #           :comment: The Health Check endpoint allows you to monitor the status of Yext's systems.
         #           :sandbox_only: false
         class Health < Yext::Api::Utils::ApiBase
           uri("healthy")

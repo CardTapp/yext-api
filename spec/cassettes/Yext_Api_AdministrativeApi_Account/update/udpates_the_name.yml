@@ -1,0 +1,149 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.yext.com/v2/accounts/my-test-account-id-2?api_key=fake_api_key&v=20161012
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Thu, 01 Feb 2018 21:10:41 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '354'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '5000'
+      rate-limit-remaining:
+      - '4992'
+      rate-limit-reset:
+      - '1517522400'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"de282e7e-ca10-4a5e-a1cd-dc888de8dd00","errors":[]},"response":{"accountId":"my-test-account-id-2","locationCount":1,"subAccountCount":0,"parentAccountId":"fake_account_id","accountName":"RSpec
+        Changed Test Account 2","contactFirstName":"CardTapp","contactLastName":"Development","contactPhone":"","contactEmail":"yext_development@cardtapp.com"}}'
+    http_version: 
+  recorded_at: Thu, 01 Feb 2018 21:10:41 GMT
+- request:
+    method: put
+    uri: https://sandbox.yext.com/v2/accounts/my-test-account-id-2?api_key=fake_api_key&v=20161012
+    body:
+      encoding: UTF-8
+      string: '{"accountName":"RSpec Changed Test Account 2"}'
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Thu, 01 Feb 2018 21:10:54 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '109'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '5000'
+      rate-limit-remaining:
+      - '4991'
+      rate-limit-reset:
+      - '1517522400'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"accb6afe-a83c-4544-8030-ce54a31808b7","errors":[]},"response":{"id":"my-test-account-id-2"}}'
+    http_version: 
+  recorded_at: Thu, 01 Feb 2018 21:10:54 GMT
+- request:
+    method: get
+    uri: https://sandbox.yext.com/v2/accounts/my-test-account-id-2?api_key=fake_api_key&v=20161012
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Thu, 01 Feb 2018 21:11:45 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '354'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '5000'
+      rate-limit-remaining:
+      - '4990'
+      rate-limit-reset:
+      - '1517522400'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"ccac30bd-9a21-4559-a0a6-dc98134100a0","errors":[]},"response":{"accountId":"my-test-account-id-2","locationCount":1,"subAccountCount":0,"parentAccountId":"fake_account_id","accountName":"RSpec
+        Changed Test Account 2","contactFirstName":"CardTapp","contactLastName":"Development","contactPhone":"","contactEmail":"yext_development@cardtapp.com"}}'
+    http_version: 
+  recorded_at: Thu, 01 Feb 2018 21:11:45 GMT
+- request:
+    method: put
+    uri: https://sandbox.yext.com/v2/accounts/my-test-account-id-2?api_key=fake_api_key&v=20161012
+    body:
+      encoding: UTF-8
+      string: '{"accountName":"RSpec Test Account 2"}'
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Thu, 01 Feb 2018 21:11:56 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '109'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '5000'
+      rate-limit-remaining:
+      - '4989'
+      rate-limit-reset:
+      - '1517522400'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"be648a3b-0ca1-4d08-b63d-d9bbf9ba4bab","errors":[]},"response":{"id":"my-test-account-id-2"}}'
+    http_version: 
+  recorded_at: Thu, 01 Feb 2018 21:11:56 GMT
+recorded_with: VCR 4.0.0
