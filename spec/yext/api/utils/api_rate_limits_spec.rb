@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-RSpec.describe Yext::Api::Utils::ApiRateLimits do
+RSpec.describe Yext::Api::Utils::Middleware::ApiRateLimits do
   let(:limit) { rand(1_000..2_000) }
   let(:remaining) { rand(1_000..2_000) }
   let(:reset_at) { rand(1_000..2_000).seconds.from_now }
@@ -12,7 +12,7 @@ RSpec.describe Yext::Api::Utils::ApiRateLimits do
                           "rate-limit-remaining" => remaining,
                           "rate-limit-reset"     => reset_at } }
   end
-  let(:rate_limits) { Yext::Api::Utils::ApiRateLimits.new }
+  let(:rate_limits) { Yext::Api::Utils::Middleware::ApiRateLimits.new }
 
   all_modules = [Yext::Api::LiveApi, Yext::Api::KnowledgeApi, Yext::Api::AdministrativeApi]
 
@@ -96,18 +96,6 @@ RSpec.describe Yext::Api::Utils::ApiRateLimits do
       end
     end
   end
-
-  it_behaves_like("finds path",
-                  Yext::Api::LiveApi,
-                  "fake",
-                  action:          :show,
-                  method:          :get,
-                  endpoint:        "https://liveapi.yext.com/v2/accounts/{accountId}/fake/{fakeId}/schema",
-                  path_regex:      "https://liveapi.yext.com/v2/accounts/\\w+/locations/\\w+?/schema",
-                  default_version: "20161012",
-                  documentation:   "http://developer.yext.com/docs/live-api/#operation/getLocationSchema",
-                  comment:         "fake comment",
-                  sandbox_only:    false)
 
   it "ignores a path that cannot be found" do
     url = "https://api.yext.com/v2/accounts/accountId/fake/fakeId/fakeschema"

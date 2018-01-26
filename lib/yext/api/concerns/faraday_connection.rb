@@ -32,9 +32,10 @@ module Yext
           Faraday.new(url: url) do |c|
             c.request :json
 
-            c.use Yext::Api::Utils::ResponseParser
-            c.use Yext::Api::Utils::DefaultParameters
-            c.use Yext::Api::Utils::ApiRateLimits
+            c.use Yext::Api::Utils::Middleware::ResponseParser
+            c.use Yext::Api::Utils::Middleware::DefaultParameters
+            c.use Yext::Api::Utils::Middleware::ApiRateLimits
+            c.use Yext::Api::Utils::Middleware::UriCleanup
 
             c.adapter Faraday.default_adapter
           end

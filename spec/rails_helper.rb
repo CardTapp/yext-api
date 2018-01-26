@@ -110,15 +110,6 @@ RSpec.configure do |config|
   # config.add_formatter Spec::Runner::Formatter::TeamcityFormatter
 end
 
-# require "vcr"
-#
-# VCR.configure do |config|
-#   config.hook_into :webmock
-#   config.cassette_library_dir = "spec/cassettes"
-#   config.configure_rspec_metadata!
-#   config.default_cassette_options = { match_requests_on: %i[method path query] }
-# end
-
 # Cornucopia::Util::Configuration.context_seed = 1
 # Cornucopia::Util::Configuration.seed         = 1
 # Cornucopia::Util::Configuration.order_seed   = 1

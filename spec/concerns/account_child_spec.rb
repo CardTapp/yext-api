@@ -68,7 +68,7 @@ RSpec.describe Yext::Api::Concerns::AccountChild do
 
     it "includes custom routes" do
       fake_spyke = OtherFakeSpyke.new
-      path = Spyke::Path.new(OtherFakeSpyke.all.uri, fake_spyke.attributes)
+      path       = Spyke::Path.new(OtherFakeSpyke.all.uri, fake_spyke.attributes)
 
       expect(path.to_s).to eq "accounts/testing%20account_id/fakespyke"
     end

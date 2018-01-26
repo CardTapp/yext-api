@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.13.1
+      - Faraday v0.14.0
   response:
     status:
       code: 200
@@ -17,7 +17,7 @@ http_interactions:
       server:
       - nginx/1.10.2
       date:
-      - Mon, 22 Jan 2018 19:09:12 GMT
+      - Fri, 26 Jan 2018 16:30:48 GMT
       content-type:
       - application/json; charset=utf-8
       content-length:
@@ -29,10 +29,10 @@ http_interactions:
       rate-limit-remaining:
       - '4998'
       rate-limit-reset:
-      - '1516651200'
+      - '1516986000'
     body:
       encoding: UTF-8
-      string: '{"meta":{"uuid":"0256a9ff-11eb-4fe9-ae77-48a1864b09f7","errors":[]},"response":{"count":0,"locations":[]}}'
+      string: '{"meta":{"uuid":"27b05724-625c-43f0-8b7f-c934cbbf5bd2","errors":[]},"response":{"count":0,"locations":[]}}'
     http_version: 
-  recorded_at: Mon, 22 Jan 2018 19:09:12 GMT
+  recorded_at: Fri, 26 Jan 2018 16:30:48 GMT
 recorded_with: VCR 4.0.0

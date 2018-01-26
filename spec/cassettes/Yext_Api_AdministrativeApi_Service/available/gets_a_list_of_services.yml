@@ -8,38 +8,34 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.13.1
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
+      - Faraday v0.14.0
   response:
     status:
       code: 200
       message: OK
     headers:
-      Server:
+      server:
       - nginx/1.10.2
-      Date:
-      - Sat, 20 Jan 2018 20:16:06 GMT
-      Content-Type:
+      date:
+      - Fri, 26 Jan 2018 16:30:46 GMT
+      content-type:
       - application/json; charset=utf-8
-      Content-Length:
+      content-length:
       - '383'
-      Connection:
+      connection:
       - keep-alive
-      Rate-Limit-Limit:
+      rate-limit-limit:
       - '1000'
-      Rate-Limit-Remaining:
-      - '995'
-      Rate-Limit-Reset:
-      - '1516482000'
+      rate-limit-remaining:
+      - '996'
+      rate-limit-reset:
+      - '1516986000'
     body:
       encoding: UTF-8
-      string: '{"meta":{"uuid":"a906b82d-654d-44a5-98fa-eb352abb7759","errors":[]},"response":{"availableServices":[{"sku":"DEV-00010000","serviceDescription":"Location
+      string: '{"meta":{"uuid":"a02d03e8-909a-4410-a6c6-3f2095deba4a","errors":[]},"response":{"availableServices":[{"sku":"DEV-00010000","serviceDescription":"Location
         Cloud Starter","agreementId":"3338"},{"sku":"DEV-00010001","serviceDescription":"Location
         Cloud Professional","agreementId":"3338"},{"sku":"DEV-00010005","serviceDescription":"Healthcare
         Add-On","agreementId":"3338"}],"count":3}}'
     http_version: 
-  recorded_at: Sat, 20 Jan 2018 20:16:06 GMT
+  recorded_at: Fri, 26 Jan 2018 16:30:46 GMT
 recorded_with: VCR 4.0.0

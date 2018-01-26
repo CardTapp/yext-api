@@ -8,36 +8,32 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.13.1
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
+      - Faraday v0.14.0
   response:
     status:
       code: 200
       message: OK
     headers:
-      Server:
+      server:
       - nginx/1.10.2
-      Date:
-      - Sun, 21 Jan 2018 21:54:53 GMT
-      Content-Type:
+      date:
+      - Fri, 26 Jan 2018 16:30:51 GMT
+      content-type:
       - application/json; charset=utf-8
-      Content-Length:
+      content-length:
       - '329'
-      Connection:
+      connection:
       - keep-alive
-      Rate-Limit-Limit:
+      rate-limit-limit:
       - '5000'
-      Rate-Limit-Remaining:
-      - '4999'
-      Rate-Limit-Reset:
-      - '1516572000'
+      rate-limit-remaining:
+      - '4994'
+      rate-limit-reset:
+      - '1516986000'
     body:
       encoding: UTF-8
-      string: '{"meta":{"uuid":"12e9bb8a-47c2-49e5-bdae-0e5a098302dc","errors":[]},"response":{"accountId":"ct-dustin","locationCount":1,"subAccountCount":0,"parentAccountId":"1273878","accountName":"CardTapp
+      string: '{"meta":{"uuid":"384cf962-f805-447e-9abc-56519f98d825","errors":[]},"response":{"accountId":"ct-dustin","locationCount":1,"subAccountCount":0,"parentAccountId":"fake_account_id","accountName":"CardTapp
         North","contactFirstName":"CardTapp","contactLastName":"Development","contactPhone":"","contactEmail":"yext_development@cardtapp.com"}}'
     http_version: 
-  recorded_at: Sun, 21 Jan 2018 21:54:54 GMT
+  recorded_at: Fri, 26 Jan 2018 16:30:51 GMT
 recorded_with: VCR 4.0.0

@@ -64,7 +64,7 @@
         - :action: :show
           :method: :get
           :endpoint: https://api.yext.com/v2/accounts/{accountId}/addrequests/{addRequestId}
-          :path_regex: v2/accounts/[^/]+?/addrequests/[^/]+??
+          :path_regex: v2/accounts/[^/]+?/addrequests/[^/]+?
           :default_version: 20161012
           :documentation: http://developer.yext.com/docs/administrative-api/#operation/getAddRequest
           :comment: Get status information about an add request previously created.
@@ -141,7 +141,7 @@
           - :action: :show
             :method: :get
             :endpoint: https://api.yext.com/v2/accounts/{accountId}/locations/{locationId}
-            :path_regex: v2/accounts/[^/]+?/locations/[^/]+??
+            :path_regex: v2/accounts/[^/]+?/locations/[^/]+?
             :default_version: 20161012
             :documentation: http://developer.yext.com/docs/api-reference/#operation/getLocation
             :comment: Gets the primary profile for a single Location.
@@ -149,7 +149,7 @@
           - :action: :update
             :method: :put
             :endpoint: https://api.yext.com/v2/accounts/{accountId}/locations/{locationId}
-            :path_regex: v2/accounts/[^/]+?/locations/[^/]+??
+            :path_regex: v2/accounts/[^/]+?/locations/[^/]+?
             :default_version: 20161012
             :documentation: http://developer.yext.com/docs/api-reference/#operation/updateLocation
             :comment: Updates the primary profile for a Location.
@@ -185,7 +185,7 @@
           - :action: :show
             :method: :get
             :endpoint: https://api.yext.com/v2/accounts/{accountId}/menus/{listId}
-            :path_regex: v2/accounts/[^/]+?/menus/[^/]+??
+            :path_regex: v2/accounts/[^/]+?/menus/[^/]+?
             :default_version: 20161012
             :documentation: http://developer.yext.com/docs/api-reference/#operation/getMenu
             :comment: Retrieve a specific Menu.
@@ -193,7 +193,7 @@
           - :action: :update
             :method: :put
             :endpoint: https://api.yext.com/v2/accounts/{accountId}/menus/{listId}
-            :path_regex: v2/accounts/[^/]+?/menus/[^/]+??
+            :path_regex: v2/accounts/[^/]+?/menus/[^/]+?
             :default_version: 20161012
             :documentation: http://developer.yext.com/docs/api-reference/#operation/updateMenu
             :comment: Update an existing Menu.
@@ -201,7 +201,7 @@
           - :action: :destroy
             :method: :delete
             :endpoint: https://api.yext.com/v2/accounts/{accountId}/menus/{listId}
-            :path_regex: v2/accounts/[^/]+?/menus/[^/]+??
+            :path_regex: v2/accounts/[^/]+?/menus/[^/]+?
             :default_version: 20161012
             :documentation: http://developer.yext.com/docs/api-reference/#operation/deleteMenuList
             :comment: Delete an existing Menu.
@@ -227,7 +227,7 @@
           - :action: :show
             :method: :get
             :endpoint: https://api.yext.com/v2/accounts/{accountId}/bios/{listId}
-            :path_regex: v2/accounts/[^/]+?/bios/[^/]+??
+            :path_regex: v2/accounts/[^/]+?/bios/[^/]+?
             :default_version: 20161012
             :documentation: http://developer.yext.com/docs/api-reference/#operation/getBio
             :comment: Retrieve a specific Bio List.
@@ -235,7 +235,7 @@
           - :action: :update
             :method: :put
             :endpoint: https://api.yext.com/v2/accounts/{accountId}/bios/{listId}
-            :path_regex: v2/accounts/[^/]+?/bios/[^/]+??
+            :path_regex: v2/accounts/[^/]+?/bios/[^/]+?
             :default_version: 20161012
             :documentation: http://developer.yext.com/docs/api-reference/#operation/updateBio
             :comment: Update an existing Bio List.
@@ -243,7 +243,7 @@
           - :action: :destroy
             :method: :delete
             :endpoint: https://api.yext.com/v2/accounts/{accountId}/bios/{listId}
-            :path_regex: v2/accounts/[^/]+?/bios/[^/]+??
+            :path_regex: v2/accounts/[^/]+?/bios/[^/]+?
             :default_version: 20161012
             :documentation: http://developer.yext.com/docs/api-reference/#operation/deleteBioList
             :comment: Delete an existing Bios List.
@@ -269,7 +269,7 @@
           - :action: :show
             :method: :get
             :endpoint: https://api.yext.com/v2/accounts/{accountId}/products/{listId}
-            :path_regex: v2/accounts/[^/]+?/products/[^/]+??
+            :path_regex: v2/accounts/[^/]+?/products/[^/]+?
             :default_version: 20161012
             :documentation: http://developer.yext.com/docs/api-reference/#operation/getProduct
             :comment: Retrieve a specific Product List.
@@ -277,7 +277,7 @@
           - :action: :update
             :method: :put
             :endpoint: https://api.yext.com/v2/accounts/{accountId}/products/{listId}
-            :path_regex: v2/accounts/[^/]+?/products/[^/]+??
+            :path_regex: v2/accounts/[^/]+?/products/[^/]+?
             :default_version: 20161012
             :documentation: http://developer.yext.com/docs/api-reference/#operation/updateProduct
             :comment: Update an existing Product List.
@@ -285,7 +285,7 @@
           - :action: :destroy
             :method: :delete
             :endpoint: https://api.yext.com/v2/accounts/{accountId}/products/{listId}
-            :path_regex: v2/accounts/[^/]+?/products/[^/]+??
+            :path_regex: v2/accounts/[^/]+?/products/[^/]+?
             :default_version: 20161012
             :documentation: http://developer.yext.com/docs/api-reference/#operation/deleteProductList
             :comment: Delete an existing Products List.
@@ -311,7 +311,7 @@
           - :action: :show
             :method: :get
             :endpoint: https://api.yext.com/v2/accounts/{accountId}/events/{listId}
-            :path_regex: v2/accounts/[^/]+?/events/[^/]+??
+            :path_regex: v2/accounts/[^/]+?/events/[^/]+?
             :default_version: 20161012
             :documentation: http://developer.yext.com/docs/api-reference/#operation/getEvent
             :comment: Retrieve a specific Event List.
@@ -319,7 +319,7 @@
           - :action: :update
             :method: :put
             :endpoint: https://api.yext.com/v2/accounts/{accountId}/events/{listId}
-            :path_regex: v2/accounts/[^/]+?/events/[^/]+??
+            :path_regex: v2/accounts/[^/]+?/events/[^/]+?
             :default_version: 20161012
             :documentation: http://developer.yext.com/docs/api-reference/#operation/updateEvent
             :comment: Update an existing Event List.
@@ -327,7 +327,7 @@
           - :action: :destroy
             :method: :delete
             :endpoint: https://api.yext.com/v2/accounts/{accountId}/events/{listId}
-            :path_regex: v2/accounts/[^/]+?/events/[^/]+??
+            :path_regex: v2/accounts/[^/]+?/events/[^/]+?
             :default_version: 20161012
             :documentation: http://developer.yext.com/docs/api-reference/#operation/deleteEventList
             :comment: Delete an existing Events List.
@@ -378,7 +378,7 @@
           - :action: :show
             :method: :get
             :endpoint: https://api.yext.com/v2/accounts/{accountId}/customfields/{customFieldId}
-            :path_regex: v2/accounts/[^/]+?/customfields/[^/]+??
+            :path_regex: v2/accounts/[^/]+?/customfields/[^/]+?
             :default_version: 20161012
             :documentation: http://developer.yext.com/docs/api-reference/#operation/getCustomField
             :comment: Gets a specific Custom Field in an Account.
@@ -386,7 +386,7 @@
           - :action: :update
             :method: :put
             :endpoint: https://api.yext.com/v2/accounts/{accountId}/customfields/{customFieldId}
-            :path_regex: v2/accounts/[^/]+?/customfields/[^/]+??
+            :path_regex: v2/accounts/[^/]+?/customfields/[^/]+?
             :default_version: 20161012
             :documentation: http://developer.yext.com/docs/api-reference/#operation/updateCustomField
             :comment: Updates a single Custom Field in an Account.
@@ -394,7 +394,7 @@
           - :action: :destroy
             :method: :delete
             :endpoint: https://api.yext.com/v2/accounts/{accountId}/customfields/{customFieldId}
-            :path_regex: v2/accounts/[^/]+?/customfields/[^/]+??
+            :path_regex: v2/accounts/[^/]+?/customfields/[^/]+?
             :default_version: 20161012
             :documentation: http://developer.yext.com/docs/api-reference/#operation/deleteCustomField
             :comment: Deletes a Custom Field in an Account.
@@ -405,7 +405,7 @@
           - :action: :index
             :method: :get
             :endpoint: https://api.yext.com/v2/accounts/{accountId}/locations/{locationId}/profiles
-            :path_regex: v2/accounts/[^/]+?/locations/[^/]+??/profiles
+            :path_regex: v2/accounts/[^/]+?/locations/[^/]+?/profiles
             :default_version: 20161012
             :documentation: http://developer.yext.com/docs/api-reference/#operation/getLanguageProfiles
             :comment: Get Language Profiles for a Location.
@@ -415,7 +415,7 @@
           - :action: :show
             :method: :get
             :endpoint: https://api.yext.com/v2/accounts/{accountId}/locations/{locationId}/profiles/{language_code}
-            :path_regex: v2/accounts/[^/]+?/locations/[^/]+??/profiles/[^/]+??
+            :path_regex: v2/accounts/[^/]+?/locations/[^/]+?/profiles/[^/]+?
             :default_version: 20161012
             :documentation: http://developer.yext.com/docs/api-reference/#operation/getLanguageProfile
             :comment: Gets the the requested Language Profile for a given Location.
@@ -423,7 +423,7 @@
           - :action: :update
             :method: :put
             :endpoint: https://api.yext.com/v2/accounts/{accountId}/locations/{locationId}/profiles/{language_code}
-            :path_regex: v2/accounts/[^/]+?/locations/[^/]+??/profiles/[^/]+??
+            :path_regex: v2/accounts/[^/]+?/locations/[^/]+?/profiles/[^/]+?
             :default_version: 20161012
             :documentation: http://developer.yext.com/docs/api-reference/#operation/updateLanguageProfile
             :comment: Creates and / or sets the fields for a Language Profile
@@ -431,7 +431,7 @@
           - :action: :destroy
             :method: :delete
             :endpoint: https://api.yext.com/v2/accounts/{accountId}/locations/{locationId}/profiles/{language_code}
-            :path_regex: v2/accounts/[^/]+?/locations/[^/]+??/profiles/[^/]+??
+            :path_regex: v2/accounts/[^/]+?/locations/[^/]+?/profiles/[^/]+?
             :default_version: 20161012
             :documentation: http://developer.yext.com/docs/api-reference/#operation/deleteLanguageProfile
             :comment: Remove a Language Profile from a location.
@@ -457,7 +457,7 @@
           - :action: :show
             :method: :get
             :endpoint: https://api.yext.com/v2/accounts/{accountId}/assets/{assetId}
-            :path_regex: v2/accounts/[^/]+?/assets/[^/]+??
+            :path_regex: v2/accounts/[^/]+?/assets/[^/]+?
             :default_version: 20161012
             :documentation: http://developer.yext.com/docs/api-reference/#operation/getAsset
             :comment: Get a specific asset.
@@ -465,7 +465,7 @@
           - :action: :update
             :method: :put
             :endpoint: https://api.yext.com/v2/accounts/{accountId}/assets/{assetId}
-            :path_regex: v2/accounts/[^/]+?/assets/[^/]+??
+            :path_regex: v2/accounts/[^/]+?/assets/[^/]+?
             :default_version: 20161012
             :documentation: http://developer.yext.com/docs/api-reference/#operation/updateAsset
             :comment: Update a specific asset.
@@ -473,7 +473,7 @@
           - :action: :destroy
             :method: :delete
             :endpoint: https://api.yext.com/v2/accounts/{accountId}/assets/{assetId}
-            :path_regex: v2/accounts/[^/]+?/assets/[^/]+??
+            :path_regex: v2/accounts/[^/]+?/assets/[^/]+?
             :default_version: 20161012
             :documentation: http://developer.yext.com/docs/api-reference/#operation/deleteAsset
             :comment: Delete a specific asset.
@@ -529,7 +529,7 @@
           - :action: :show
             :method: :get
             :endpoint: https://api.yext.com/v2/accounts/{accountId}/powerlistings/publishersuggestions/{suggestionId}
-            :path_regex: v2/accounts/[^/]+?/powerlistings/publishersuggestions/[^/]+??
+            :path_regex: v2/accounts/[^/]+?/powerlistings/publishersuggestions/[^/]+?
             :default_version: 20161012
             :documentation: http://developer.yext.com/docs/api-reference/#operation/getPublisherSuggestion
             :comment: Fetches details of a specific Publisher Suggestion.
@@ -537,7 +537,7 @@
           - :action: :update
             :method: :put
             :endpoint: https://api.yext.com/v2/accounts/{accountId}/powerlistings/publishersuggestions/{suggestionId}
-            :path_regex: v2/accounts/[^/]+?/powerlistings/publishersuggestions/[^/]+??
+            :path_regex: v2/accounts/[^/]+?/powerlistings/publishersuggestions/[^/]+?
             :default_version: 20161012
             :documentation: http://developer.yext.com/docs/api-reference/#operation/updatePublisherSuggestion
             :comment: Accept or reject a Publisher Suggestion.
@@ -563,7 +563,7 @@
           - :action: :destroy
             :method: :delete
             :endpoint: https://api.yext.com/v2/accounts/{accountId}/powerlistings/duplicates/{duplicateId}
-            :path_regex: v2/accounts/[^/]+?/powerlistings/duplicates/[^/]+??
+            :path_regex: v2/accounts/[^/]+?/powerlistings/duplicates/[^/]+?
             :default_version: 20161012
             :documentation: http://developer.yext.com/docs/api-reference/#operation/deleteDuplicate
             :comment: Indicates that a Duplicate should be ignored.
@@ -571,7 +571,7 @@
           - :action: :suppress
             :method: :put
             :endpoint: https://api.yext.com/v2/accounts/{accountId}/powerlistings/duplicates/{duplicateId}
-            :path_regex: v2/accounts/[^/]+?/powerlistings/duplicates/[^/]+??
+            :path_regex: v2/accounts/[^/]+?/powerlistings/duplicates/[^/]+?
             :default_version: 20161012
             :documentation: http://developer.yext.com/docs/api-reference/#operation/suppressDuplicate
             :comment: Request suppression of a Duplicate.
@@ -601,7 +601,7 @@
           - :action: :show
             :method: :get
             :endpoint: https://api.yext.com/v2/accounts/{accountId}/analytics/standardreports/{reportId}
-            :path_regex: v2/accounts/[^/]+?/analytics/standardreports/[^/]+??
+            :path_regex: v2/accounts/[^/]+?/analytics/standardreports/[^/]+?
             :default_version: 20161012
             :documentation: http://developer.yext.com/docs/api-reference/#operation/reportStatus
             :comment: Checks the status of a Report created with async=true.
@@ -640,7 +640,7 @@
           - :action: :show
             :method: :get
             :endpoint: https://api.yext.com/v2/accounts/{accountId}/reviews/{reviewId}
-            :path_regex: v2/accounts/[^/]+?/reviews/[^/]+??
+            :path_regex: v2/accounts/[^/]+?/reviews/[^/]+?
             :default_version: 20161012
             :documentation: http://developer.yext.com/docs/api-reference/#operation/getReview
             :comment: Retrieve a specific Review.
@@ -648,7 +648,7 @@
           - :action: :update
             :method: :put
             :endpoint: https://api.yext.com/v2/accounts/{accountId}/reviews/{reviewId}
-            :path_regex: v2/accounts/[^/]+?/reviews/[^/]+??
+            :path_regex: v2/accounts/[^/]+?/reviews/[^/]+?
             :default_version: 20161012
             :documentation: http://developer.yext.com/docs/api-reference/#operation/updateReview
             :comment: Updates an External First Party Review.
@@ -659,7 +659,7 @@
           - :action: :create
             :method: :post
             :endpoint: https://api.yext.com/v2/accounts/{accountId}/reviews/{reviewId}/comments
-            :path_regex: v2/accounts/[^/]+?/reviews/[^/]+??/comments
+            :path_regex: v2/accounts/[^/]+?/reviews/[^/]+?/comments
             :default_version: 20161012
             :documentation: http://developer.yext.com/docs/api-reference/#operation/createComment
             :comment: Creates a new Comment on a Review.
@@ -685,7 +685,7 @@
           - :action: :show
             :method: :get
             :endpoint: https://api.yext.com/v2/accounts/{accountId}/reviewinvites/{invitationId}
-            :path_regex: v2/accounts/[^/]+?/reviewinvites/[^/]+??
+            :path_regex: v2/accounts/[^/]+?/reviewinvites/[^/]+?
             :default_version: 20161012
             :documentation: http://developer.yext.com/docs/api-reference/#operation/getReviewInvitation
             :comment: Retrieve a specific review invitation.
@@ -736,7 +736,7 @@
           - :action: :destroy
             :method: :delete
             :endpoint: https://api.yext.com/v2/accounts/{accountId}/posts/{postId}
-            :path_regex: v2/accounts/[^/]+?/posts/[^/]+??
+            :path_regex: v2/accounts/[^/]+?/posts/[^/]+?
             :default_version: 20161012
             :documentation: http://developer.yext.com/docs/api-reference/#operation/deletePost
             :comment: Deletes an existing Post.
@@ -747,7 +747,7 @@
           - :action: :index
             :method: :get
             :endpoint: https://api.yext.com/v2/accounts/{accountId}/posts/{postId}/comments
-            :path_regex: v2/accounts/[^/]+?/posts/[^/]+??/comments
+            :path_regex: v2/accounts/[^/]+?/posts/[^/]+?/comments
             :default_version: 20161012
             :documentation: http://developer.yext.com/docs/api-reference/#operation/getComments
             :comment: Retrieve list of Comments for a Post.
@@ -755,7 +755,7 @@
           - :action: :create
             :method: :post
             :endpoint: https://api.yext.com/v2/accounts/{accountId}/posts/{postId}/comments
-            :path_regex: v2/accounts/[^/]+?/posts/[^/]+??/comments
+            :path_regex: v2/accounts/[^/]+?/posts/[^/]+?/comments
             :default_version: 20161012
             :documentation: http://developer.yext.com/docs/api-reference/#operation/createComment
             :comment: Create a new Comment in response to another Post / Comment.
@@ -763,7 +763,7 @@
           - :action: :update
             :method: :put
             :endpoint: https://api.yext.com/v2/accounts/{accountId}/posts/{postId}/comments/{commentId}
-            :path_regex: v2/accounts/[^/]+?/posts/[^/]+??/comments/[^/]+??
+            :path_regex: v2/accounts/[^/]+?/posts/[^/]+?/comments/[^/]+?
             :default_version: 20161012
             :documentation: http://developer.yext.com/docs/api-reference/#operation/updateComment
             :comment: Updates an existing Comment.
@@ -771,7 +771,7 @@
           - :action: :destroy
             :method: :delete
             :endpoint: https://api.yext.com/v2/accounts/{accountId}/posts/{postId}/comments/{commentId}
-            :path_regex: v2/accounts/[^/]+?/posts/[^/]+??/comments/[^/]+??
+            :path_regex: v2/accounts/[^/]+?/posts/[^/]+?/comments/[^/]+?
             :default_version: 20161012
             :documentation: http://developer.yext.com/docs/api-reference/#operation/deleteComment
             :comment: Deletes an existing Comment.
@@ -789,7 +789,7 @@
           - :action: :show
             :method: :get
             :endpoint: https://api.yext.com/v2/accounts/{accountId}/linkedaccounts/{linkedAccountId}
-            :path_regex: v2/accounts/[^/]+?/linkedaccounts/[^/]+??
+            :path_regex: v2/accounts/[^/]+?/linkedaccounts/[^/]+?
             :default_version: 20161012
             :documentation: http://developer.yext.com/docs/api-reference/#operation/getLinkedAccount
             :comment: Retrieve a specific Linked Account.
@@ -797,7 +797,7 @@
           - :action: :update
             :method: :put
             :endpoint: https://api.yext.com/v2/accounts/{accountId}/linkedaccounts/{linkedAccountId}
-            :path_regex: v2/accounts/[^/]+?/linkedaccounts/[^/]+??
+            :path_regex: v2/accounts/[^/]+?/linkedaccounts/[^/]+?
             :default_version: 20161012
             :documentation: http://developer.yext.com/docs/api-reference/#operation/updateLinkedAccount
             :comment: Assign or Unassign a Linked Account to one or more Locations.
@@ -835,7 +835,7 @@
           - :action: :show
             :method: :get
             :endpoint: https://api.yext.com/v2/accounts/{accountId}/users/{userId}
-            :path_regex: v2/accounts/[^/]+?/users/[^/]+??
+            :path_regex: v2/accounts/[^/]+?/users/[^/]+?
             :default_version: 20161012
             :documentation: http://developer.yext.com/docs/api-reference/#operation/getUser
             :comment: Retrieves details of a specific User.
@@ -843,7 +843,7 @@
           - :action: :update
             :method: :put
             :endpoint: https://api.yext.com/v2/accounts/{accountId}/users/{userId}
-            :path_regex: v2/accounts/[^/]+?/users/[^/]+??
+            :path_regex: v2/accounts/[^/]+?/users/[^/]+?
             :default_version: 20161012
             :documentation: http://developer.yext.com/docs/api-reference/#operation/updateUser
             :comment: Updates an existing User.
@@ -851,7 +851,7 @@
           - :action: :destroy
             :method: :delete
             :endpoint: https://api.yext.com/v2/accounts/{accountId}/users/{userId}
-            :path_regex: v2/accounts/[^/]+?/users/[^/]+??
+            :path_regex: v2/accounts/[^/]+?/users/[^/]+?
             :default_version: 20161012
             :documentation: http://developer.yext.com/docs/api-reference/#operation/deleteUser
             :comment: Deletes an existing User.
@@ -859,7 +859,7 @@
           - :action: :change_password
             :method: :put
             :endpoint: https://api.yext.com/v2/accounts/{accountId}/users/{userId}/password
-            :path_regex: v2/accounts/[^/]+?/users/[^/]+??/password
+            :path_regex: v2/accounts/[^/]+?/users/[^/]+?/password
             :default_version: 20161012
             :documentation: http://developer.yext.com/docs/api-reference/#operation/updateUserPassword
             :comment: Updates a User's password.
@@ -912,7 +912,7 @@
         - :action: :show
           :method: :get
           :endpoint: https://liveapi.yext.com/v2/accounts/{accountId}/menus/{listId}
-          :path_regex: https://liveapi.yext.com/v2/accounts/[^/]+?/menus/[^/]+??
+          :path_regex: https://liveapi.yext.com/v2/accounts/[^/]+?/menus/[^/]+?
           :default_version: 20161012
           :documentation: http://developer.yext.com/docs/live-api/#operation/getMenus
           :comment: Retrieve a specific Menu.
@@ -922,7 +922,7 @@
         - :action: :show
           :method: :get
           :endpoint: https://liveapi.yext.com/v2/accounts/{accountId}/bios/{listId}
-          :path_regex: https://liveapi.yext.com/v2/accounts/[^/]+?/bios/[^/]+??
+          :path_regex: https://liveapi.yext.com/v2/accounts/[^/]+?/bios/[^/]+?
           :default_version: 20161012
           :documentation: http://developer.yext.com/docs/live-api/#operation/getBios
           :comment: Retrieve a specific Bios ECL.
@@ -932,7 +932,7 @@
         - :action: :show
           :method: :get
           :endpoint: https://liveapi.yext.com/v2/accounts/{accountId}/products/{listId}
-          :path_regex: https://liveapi.yext.com/v2/accounts/[^/]+?/products/[^/]+??
+          :path_regex: https://liveapi.yext.com/v2/accounts/[^/]+?/products/[^/]+?
           :default_version: 20161012
           :documentation: http://developer.yext.com/docs/live-api/#operation/getProducts
           :comment: Retrieve a specific Products ECL.
@@ -942,7 +942,7 @@
         - :action: :show
           :method: :get
           :endpoint: https://liveapi.yext.com/v2/accounts/{accountId}/events/{listId}
-          :path_regex: https://liveapi.yext.com/v2/accounts/[^/]+?/events/[^/]+??
+          :path_regex: https://liveapi.yext.com/v2/accounts/[^/]+?/events/[^/]+?
           :default_version: 20161012
           :documentation: http://developer.yext.com/docs/live-api/#operation/getEvents
           :comment: Retrieve a specific Events ECL.
@@ -954,7 +954,7 @@
         - :action: :index
           :method: :get
           :endpoint: https://liveapi.yext.com/v2/accounts/{accountId}/locations/{locationId}/profiles/
-          :path_regex: https://liveapi.yext.com/v2/accounts/[^/]+?/locations/[^/]+??/profiles/
+          :path_regex: https://liveapi.yext.com/v2/accounts/[^/]+?/locations/[^/]+?/profiles/
           :default_version: 20161012
           :documentation: http://developer.yext.com/docs/live-api/#operation/listLanguageProfiles
           :comment: Gets all Language Profiles for a Location.
@@ -962,7 +962,7 @@
         - :action: :show
           :method: :get
           :endpoint: https://liveapi.yext.com/v2/accounts/{accountId}/locations/{locationId}/profiles/{languageCode}
-          :path_regex: https://liveapi.yext.com/v2/accounts/[^/]+?/locations/[^/]+??/profiles/[^/]+??
+          :path_regex: https://liveapi.yext.com/v2/accounts/[^/]+?/locations/[^/]+?/profiles/[^/]+?
           :default_version: 20161012
           :documentation: http://developer.yext.com/docs/live-api/#operation/getLanguageProfiles
           :comment: Gets the requested Language Profile for a given Location.
@@ -973,12 +973,35 @@
         - :action: :show
           :method: :get
           :endpoint: https://liveapi.yext.com/v2/accounts/{accountId}/locations/{locationId}/profiles/{languageCode}/schema
-          :path_regex: https://liveapi.yext.com/v2/accounts/[^/]+?/locations/[^/]+??/profiles/[^/]+??/schema
+          :path_regex: https://liveapi.yext.com/v2/accounts/[^/]+?/locations/[^/]+?/profiles/[^/]+?/schema
           :default_version: 20161012
           :documentation: http://developer.yext.com/docs/live-api/#operation/getLanguageProfilesSchema
           :comment: >
             Gets the schema.org compliant schema for the requested Language Profile of a given Location.
             Schema will vary depending on the primary category of the Location.
+          :sandbox_only: false
+    :location_schema:
+      :actions:
+        - :action: :show
+          :method: :get
+          :endpoint: https://liveapi.yext.com/v2/accounts/{accountId}/locations/{locationId}/schema
+          :path_regex: https://liveapi.yext.com/v2/accounts/[^/]+?/locations/[^/]+?/schema
+          :default_version: 20161012
+          :documentation: http://developer.yext.com/docs/live-api/#operation/getLocationSchema
+          :comment: >
+            Gets the schema.org compliant schema for the primary profile of a single Location. Schema
+            will vary depending on the primary category of the Location.
+          :sandbox_only: false
+        - :action: :geo_search
+          :method: :get
+          :endpoint: https://liveapi.yext.com/v2/accounts/{accountId}/locations/geosearch
+          :path_regex: https://liveapi.yext.com/v2/accounts/[^/]+?/locations/geosearch
+          :default_version: 20161012
+          :documentation: http://developer.yext.com/docs/live-api/#operation/geoSearch
+          :comment: >
+            Gets multiple Locations (primary profile only) near a given location, ordered by proximity
+            to the location (if no other sort criteria are given) and restricted to a radius. Searches
+            through all language profiles, including the primary profile.
           :sandbox_only: false
     :location:
       :has_many: language_profile
@@ -997,33 +1020,10 @@
         - :action: :show
           :method: :get
           :endpoint: https://liveapi.yext.com/v2/accounts/{accountId}/locations/{locationId}
-          :path_regex: https://liveapi.yext.com/v2/accounts/[^/]+?/locations/[^/]+??
+          :path_regex: https://liveapi.yext.com/v2/accounts/[^/]+?/locations/[^/]+?
           :default_version: 20161012
           :documentation: http://developer.yext.com/docs/live-api/#operation/getLocation
           :comment: Gets the primary profile for a single Location.
-          :sandbox_only: false
-    :location_schema:
-      :actions:
-        - :action: :show
-          :method: :get
-          :endpoint: https://liveapi.yext.com/v2/accounts/{accountId}/locations/{locationId}/schema
-          :path_regex: https://liveapi.yext.com/v2/accounts/[^/]+?/locations/[^/]+??/schema
-          :default_version: 20161012
-          :documentation: http://developer.yext.com/docs/live-api/#operation/getLocationSchema
-          :comment: >
-            Gets the schema.org compliant schema for the primary profile of a single Location. Schema
-            will vary depending on the primary category of the Location.
-          :sandbox_only: false
-        - :action: :geo_search
-          :method: :get
-          :endpoint: https://liveapi.yext.com/v2/accounts/{accountId}/locations/geosearch
-          :path_regex: https://liveapi.yext.com/v2/accounts/[^/]+?/locations/geosearch
-          :default_version: 20161012
-          :documentation: http://developer.yext.com/docs/live-api/#operation/geoSearch
-          :comment: >
-            Gets multiple Locations (primary profile only) near a given location, ordered by proximity
-            to the location (if no other sort criteria are given) and restricted to a radius. Searches
-            through all language profiles, including the primary profile.
           :sandbox_only: false
 :webhooks:
   :documentation: http://developer.yext.com/docs/webhooks/

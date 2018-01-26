@@ -2,8 +2,8 @@
 
 require "rails_helper"
 
-RSpec.describe Yext::Api::Utils::DefaultParameters do
-  let(:default_parameters) { Yext::Api::Utils::DefaultParameters.new }
+RSpec.describe Yext::Api::Utils::Middleware::DefaultParameters do
+  let(:default_parameters) { Yext::Api::Utils::Middleware::DefaultParameters.new }
   let(:request_environment) do
     { url:             URI.parse("https://api.yext.com/v2/accounts/accountId/services"),
       method:          "get",

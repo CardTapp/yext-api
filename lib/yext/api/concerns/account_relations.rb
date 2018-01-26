@@ -19,6 +19,12 @@ module Yext
           has_many :locations, class_name: "Yext::Api::KnowledgeApi::KnowledgeManager::Location"
           has_many :services, class_name: "Yext::Api::AdministrativeApi::Service"
         end
+
+        class_methods do
+          def association?(klass)
+            associations.key?(klass.model_name.element.pluralize.to_sym)
+          end
+        end
       end
     end
   end

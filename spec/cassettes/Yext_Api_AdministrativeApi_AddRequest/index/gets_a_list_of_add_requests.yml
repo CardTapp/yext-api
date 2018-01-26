@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.13.1
+      - Faraday v0.14.0
   response:
     status:
       code: 200
@@ -17,7 +17,7 @@ http_interactions:
       server:
       - nginx/1.10.2
       date:
-      - Wed, 24 Jan 2018 20:37:59 GMT
+      - Fri, 26 Jan 2018 16:30:49 GMT
       content-type:
       - application/json; charset=utf-8
       content-length:
@@ -27,12 +27,12 @@ http_interactions:
       rate-limit-limit:
       - '1000'
       rate-limit-remaining:
-      - '999'
+      - '990'
       rate-limit-reset:
-      - '1516827600'
+      - '1516986000'
     body:
       encoding: UTF-8
-      string: '{"meta":{"uuid":"e374a04f-fe6e-4ee4-8b18-3be0374ca865","errors":[]},"response":{"addRequests":[{"id":223779,"locationMode":"EXISTING","existingLocationId":"ct-mukilteo","skus":["DEV-00010001"],"agreementId":3338,"status":"COMPLETE","dateSubmitted":"2018-01-10T17:57:34","dateCompleted":"2018-01-10T17:57:34","statusDetail":"The
+      string: '{"meta":{"uuid":"bccca815-38af-4382-a18f-532162a3b3a4","errors":[]},"response":{"addRequests":[{"id":223779,"locationMode":"EXISTING","existingLocationId":"ct-mukilteo","skus":["DEV-00010001"],"agreementId":3338,"status":"COMPLETE","dateSubmitted":"2018-01-10T17:57:34","dateCompleted":"2018-01-10T17:57:34","statusDetail":"The
         request was completed and the specified services were started."},{"id":223698,"locationMode":"NEW","newLocationId":"65465465","newLocationAccountId":"5465456","skus":["DEV-00010000"],"agreementId":3338,"status":"COMPLETE","dateSubmitted":"2018-01-09T16:16:20","dateCompleted":"2018-01-09T16:16:21","statusDetail":"The
         request was completed and the specified services were started. Account ID
         5465456 was created by this request. Location ID 65465465 was created in this
@@ -44,5 +44,5 @@ http_interactions:
         ctpinck was created by this request. Location ID ctpinck was created in this
         request."}],"count":4}}'
     http_version: 
-  recorded_at: Wed, 24 Jan 2018 20:37:59 GMT
+  recorded_at: Fri, 26 Jan 2018 16:30:49 GMT
 recorded_with: VCR 4.0.0

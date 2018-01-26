@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.13.1
+      - Faraday v0.14.0
   response:
     status:
       code: 200
@@ -17,7 +17,7 @@ http_interactions:
       server:
       - nginx/1.10.2
       date:
-      - Wed, 24 Jan 2018 20:41:40 GMT
+      - Fri, 26 Jan 2018 16:30:49 GMT
       content-type:
       - application/json; charset=utf-8
       content-length:
@@ -27,13 +27,13 @@ http_interactions:
       rate-limit-limit:
       - '1000'
       rate-limit-remaining:
-      - '995'
+      - '991'
       rate-limit-reset:
-      - '1516827600'
+      - '1516986000'
     body:
       encoding: UTF-8
-      string: '{"meta":{"uuid":"ccc740b8-aa68-4f43-818a-b1fe6ebd5b90","errors":[]},"response":{"id":223779,"locationMode":"EXISTING","existingLocationId":"ct-mukilteo","skus":["DEV-00010001"],"agreementId":3338,"status":"COMPLETE","dateSubmitted":"2018-01-10T17:57:34","dateCompleted":"2018-01-10T17:57:34","statusDetail":"The
+      string: '{"meta":{"uuid":"0078991d-2bdd-4630-b4e6-7aeacb1a279a","errors":[]},"response":{"id":223779,"locationMode":"EXISTING","existingLocationId":"ct-mukilteo","skus":["DEV-00010001"],"agreementId":3338,"status":"COMPLETE","dateSubmitted":"2018-01-10T17:57:34","dateCompleted":"2018-01-10T17:57:34","statusDetail":"The
         request was completed and the specified services were started."}}'
     http_version: 
-  recorded_at: Wed, 24 Jan 2018 20:41:40 GMT
+  recorded_at: Fri, 26 Jan 2018 16:30:49 GMT
 recorded_with: VCR 4.0.0

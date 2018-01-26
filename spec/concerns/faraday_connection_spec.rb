@@ -78,19 +78,25 @@ RSpec.describe Yext::Api::Concerns::FaradayConnection do
     end
 
     it "uses Yext::Api::Utils::ResponseParser" do
-      expect(fake_connection).to receive(:use).with(Yext::Api::Utils::ResponseParser)
+      expect(fake_connection).to receive(:use).with(Yext::Api::Utils::Middleware::ResponseParser)
 
       Yext::Api::Concerns::FaradayConnection.faraday_connection "this is not valid"
     end
 
     it "uses Yext::Api::Utils::DefaultParameters" do
-      expect(fake_connection).to receive(:use).with(Yext::Api::Utils::DefaultParameters)
+      expect(fake_connection).to receive(:use).with(Yext::Api::Utils::Middleware::DefaultParameters)
 
       Yext::Api::Concerns::FaradayConnection.faraday_connection "this is not valid"
     end
 
     it "uses Yext::Api::Utils::ApiRateLimits" do
-      expect(fake_connection).to receive(:use).with(Yext::Api::Utils::ApiRateLimits)
+      expect(fake_connection).to receive(:use).with(Yext::Api::Utils::Middleware::ApiRateLimits)
+
+      Yext::Api::Concerns::FaradayConnection.faraday_connection "this is not valid"
+    end
+
+    it "uses Yext::Api::Utils::UriCleanup" do
+      expect(fake_connection).to receive(:use).with(Yext::Api::Utils::Middleware::UriCleanup)
 
       Yext::Api::Concerns::FaradayConnection.faraday_connection "this is not valid"
     end

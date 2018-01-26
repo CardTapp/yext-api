@@ -2,8 +2,8 @@
 
 require "rails_helper"
 
-RSpec.describe Yext::Api::Utils::ResponseParser do
-  let(:response_parser) { Yext::Api::Utils::ResponseParser.new }
+RSpec.describe Yext::Api::Utils::Middleware::ResponseParser do
+  let(:response_parser) { Yext::Api::Utils::Middleware::ResponseParser.new }
   let(:empty_body) { { meta: { errors: [] }, response: {} } }
   let(:object_data) { { id: "an id", name: "some name", sku: "fake sku" } }
   let(:data_array) { [object_data.dup, object_data.dup, object_data.dup, object_data.dup] }
@@ -55,7 +55,8 @@ RSpec.describe Yext::Api::Utils::ResponseParser do
     end
 
     it "saves metadata" do
-      allow(response_parser).to receive(:find_api).and_return Yext::Api::KnowledgeApi
+      allow(Yext::Api::Utils::ApiFinder).to receive(:new).
+          and_return instance_double(Yext::Api::Utils::ApiFinder, find_api: Yext::Api::KnowledgeApi)
 
       empty_body[:meta][:uuid] = "some uuid"
 

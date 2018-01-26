@@ -8,38 +8,34 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.13.1
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
+      - Faraday v0.14.0
   response:
     status:
       code: 200
       message: OK
     headers:
-      Server:
+      server:
       - nginx/1.10.2
-      Date:
-      - Sat, 20 Jan 2018 20:16:08 GMT
-      Content-Type:
+      date:
+      - Fri, 26 Jan 2018 16:30:47 GMT
+      content-type:
       - application/json; charset=utf-8
-      Content-Length:
+      content-length:
       - '698'
-      Connection:
+      connection:
       - keep-alive
-      Rate-Limit-Limit:
+      rate-limit-limit:
       - '1000'
-      Rate-Limit-Remaining:
-      - '992'
-      Rate-Limit-Reset:
-      - '1516482000'
+      rate-limit-remaining:
+      - '993'
+      rate-limit-reset:
+      - '1516986000'
     body:
       encoding: UTF-8
-      string: '{"meta":{"uuid":"8a724c45-9614-4ad6-9eb3-b75ccf6c55da","errors":[]},"response":{"count":3,"services":[{"id":147468,"sku":"DEV-00010001","serviceDescription":"Location
+      string: '{"meta":{"uuid":"feab8d04-d372-458f-bc16-131aa63aadd0","errors":[]},"response":{"count":3,"services":[{"id":147468,"sku":"DEV-00010001","serviceDescription":"Location
         Cloud Professional","agreementId":3338,"locationId":"ct-mukilteo","locationAccountId":"ct-dustin","status":"ACTIVE","started":"2018-01-10"},{"id":147392,"sku":"DEV-00010000","serviceDescription":"Location
         Cloud Starter","agreementId":3338,"locationId":"65465465","locationAccountId":"5465456","status":"ACTIVE","started":"2018-01-09"},{"id":147173,"sku":"DEV-00010000","serviceDescription":"Location
         Cloud Starter","agreementId":3338,"locationId":"ctpinck","locationAccountId":"ctpinck","status":"ACTIVE","started":"2018-01-03"}]}}'
     http_version: 
-  recorded_at: Sat, 20 Jan 2018 20:16:08 GMT
+  recorded_at: Fri, 26 Jan 2018 16:30:47 GMT
 recorded_with: VCR 4.0.0

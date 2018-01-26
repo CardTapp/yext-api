@@ -8,35 +8,31 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.13.1
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
+      - Faraday v0.14.0
   response:
     status:
       code: 200
       message: OK
     headers:
-      Server:
+      server:
       - nginx/1.10.2
-      Date:
-      - Sat, 20 Jan 2018 20:16:04 GMT
-      Content-Type:
+      date:
+      - Fri, 26 Jan 2018 16:30:54 GMT
+      content-type:
       - application/json; charset=utf-8
-      Transfer-Encoding:
+      transfer-encoding:
       - chunked
-      Connection:
+      connection:
       - keep-alive
-      Rate-Limit-Limit:
+      rate-limit-limit:
       - '5000'
-      Rate-Limit-Remaining:
-      - '4996'
-      Rate-Limit-Reset:
-      - '1516482000'
+      rate-limit-remaining:
+      - '4992'
+      rate-limit-reset:
+      - '1516986000'
     body:
       encoding: UTF-8
-      string: '{"meta":{"uuid":"1967d1b6-f4f4-412d-8118-c4a94197a435","errors":[]},"response":[{"id":"368","name":"Agriculture
+      string: '{"meta":{"uuid":"072250f8-b8dc-4d51-a180-07cb0d9be9dc","errors":[]},"response":[{"id":"368","name":"Agriculture
         \u0026 Industry","fullName":"Agriculture \u0026 Industry","selectable":false},{"id":"1","parentId":"368","name":"Agriculture
         \u0026 Farming","fullName":"Agriculture \u0026 Industry \u003e Agriculture
         \u0026 Farming","selectable":true},{"id":"2096","parentId":"1","name":"Aerial
@@ -3794,5 +3790,5 @@ http_interactions:
         and Passport Office","selectable":true},{"id":"309","parentId":"392","name":"Vacation
         Rental","fullName":"Travel \u003e Vacation Rental","selectable":true},{"id":"1146752","name":"Uncategorized","fullName":"Uncategorized","selectable":true}]}'
     http_version: 
-  recorded_at: Sat, 20 Jan 2018 20:16:05 GMT
+  recorded_at: Fri, 26 Jan 2018 16:30:55 GMT
 recorded_with: VCR 4.0.0

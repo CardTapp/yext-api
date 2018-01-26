@@ -26,7 +26,7 @@ module Yext
 
           def ensure_relation(klass)
             [Yext::Api::KnowledgeApi::AccountSettings::Account, Yext::Api::AdministrativeApi::Account].each do |account_class|
-              next if account_class.instance_methods.include?("#{klass.model_name.element}_ids".to_sym)
+              next if account_class.association?(klass)
 
               klass_uri = klass.instance_variable_get(:@uri)
               helper_warnings(account_class, klass, klass_uri)
@@ -83,6 +83,16 @@ module Yext
                   public_send(model_name.element.pluralize)
             else
               current_scope
+            end
+          end
+
+          def reset_uri
+            [Yext::Api::KnowledgeApi::AccountSettings::Account, Yext::Api::AdministrativeApi::Account].each do |account_class|
+              next unless account_class.association?(self)
+
+              klass_uri = instance_variable_get(:@uri) || default_uri
+
+              account_class.new.send(model_name.element.pluralize).with(Yext::Api::Concerns::AccountChild.with_account_path(klass_uri))
             end
           end
         end

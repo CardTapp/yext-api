@@ -31,6 +31,12 @@ module Yext
             where(validation: validation)
           end)
         end
+
+        class_methods do
+          def reset_uri
+            # do nothing.
+          end
+        end
       end
     end
   end
