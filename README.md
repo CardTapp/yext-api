@@ -1,3 +1,9 @@
+[![Gem Version](https://badge.fury.io/rb/yext-api.svg)](https://badge.fury.io/rb/yext-api.svg)
+[![CircleCI](https://circleci.com/gh/CardTapp/yext-api.svg?style=svg)](https://circleci.com/gh/CardTapp/yext-api)
+[![codecov](https://codecov.io/gh/CardTapp/yext-api/branch/master/graph/badge.svg)](https://codecov.io/gh/CardTapp/yext-api)
+[![Dependency Status](https://gemnasium.com/badges/github.com/CardTapp/yext-api.svg)](https://gemnasium.com/github.com/CardTapp/yext-api)
+[![Maintainability](https://api.codeclimate.com/v1/badges/d80882f00aafa1ed5c7b/maintainability)](https://codeclimate.com/github/CardTapp/yext-api/maintainability)
+
 # Yext::Api
 
 This gem provides a Rails interface with the Yext API.
