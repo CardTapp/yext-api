@@ -1,0 +1,39 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.yext.com/v2/accounts/my-test-account-id-2?api_key=fake_api_key&v=20161012
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Fri, 02 Feb 2018 00:32:45 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '346'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '5000'
+      rate-limit-remaining:
+      - '4999'
+      rate-limit-reset:
+      - '1517533200'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"b6550c08-7183-489f-b22e-ca6b7b293cb0","errors":[]},"response":{"accountId":"my-test-account-id-2","locationCount":1,"subAccountCount":0,"parentAccountId":"fake_account_id","accountName":"RSpec
+        Test Account 2","contactFirstName":"CardTapp","contactLastName":"Development","contactPhone":"","contactEmail":"yext_development@cardtapp.com"}}'
+    http_version: 
+  recorded_at: Fri, 02 Feb 2018 00:32:45 GMT
+recorded_with: VCR 4.0.0

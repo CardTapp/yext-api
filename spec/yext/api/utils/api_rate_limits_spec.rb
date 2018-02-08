@@ -18,7 +18,7 @@ RSpec.describe Yext::Api::Utils::Middleware::ApiRateLimits do
 
   before(:each) do
     all_modules.each do |rate_module|
-      rate_module.update_rates(remaining: 0, limit: 0, reset_at: nil)
+      rate_module.send(:update_rates, remaining: 0, limit: 0, reset_at: nil)
     end
 
     fake_response = instance_double(Faraday::Response)
@@ -29,7 +29,7 @@ RSpec.describe Yext::Api::Utils::Middleware::ApiRateLimits do
     rate_limits.instance_variable_set(:@app, fake_app)
   end
 
-  RSpec.shared_examples("finds path") do |api_module, object_name, action|
+  RSpec.shared_examples("finds rate limit") do |api_module, object_name, action|
     it "sets the #{api_module.name} rate limits for #{object_name}.#{action[:action]}" do
       url = action[:endpoint].delete("{")
       url = url.delete("}")
@@ -51,7 +51,7 @@ RSpec.describe Yext::Api::Utils::Middleware::ApiRateLimits do
     end
 
     it "does not change the #{api_module.name} rate limits for #{object_name}.#{action[:action]} if the header is missing" do
-      api_module.update_rates limit: limit, remaining: remaining, reset_at: reset_at
+      api_module.send(:update_rates, limit: limit, remaining: remaining, reset_at: reset_at)
 
       response_environment[:response_headers] = {}
 
@@ -81,7 +81,7 @@ RSpec.describe Yext::Api::Utils::Middleware::ApiRateLimits do
     api_object[:actions].each do |action|
       next if action[:endpoint].blank?
 
-      it_behaves_like("finds path", Yext::Api::AdministrativeApi, object_name, action)
+      it_behaves_like("finds rate limit", Yext::Api::AdministrativeApi, object_name, action)
     end
   end
 
@@ -92,7 +92,7 @@ RSpec.describe Yext::Api::Utils::Middleware::ApiRateLimits do
       api_object[:actions].each do |action|
         next if action[:endpoint].blank?
 
-        it_behaves_like("finds path", Yext::Api::KnowledgeApi, object_name, action)
+        it_behaves_like("finds rate limit", Yext::Api::KnowledgeApi, object_name, action)
       end
     end
   end

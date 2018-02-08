@@ -46,12 +46,15 @@ RSpec.describe Yext::Api::Utils::ApiFinder do
     hash[:knowledge_api].each do |sub_group_name, sub_group|
       next unless sub_group.is_a?(Hash)
 
-      describe sub_group_name.to_s.classify do
+      sub_name = sub_group_name.to_s.classify
+      sub_name = sub_group[:module_name] if sub_group[:module_name].present?
+
+      describe sub_name do
         sub_group[:objects].each do |object_name, api_object|
           api_object[:actions].each do |action|
             next if action[:endpoint].blank?
 
-            it_behaves_like("finds path", Yext::Api::KnowledgeApi, "#{sub_group_name.to_s.classify}::#{object_name.to_s.classify}", action)
+            it_behaves_like("finds path", Yext::Api::KnowledgeApi, "#{sub_name}::#{object_name.to_s.classify}", action)
           end
         end
       end

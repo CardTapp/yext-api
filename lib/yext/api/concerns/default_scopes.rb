@@ -12,8 +12,8 @@ module Yext
         extend ActiveSupport::Concern
 
         included do
-          scope(:with_version, ->(version) { where(v: version) })
-          scope(:with_application, ->(app_id) { where(api_key: app_id) })
+          scope(:version, ->(version) { where(v: version) })
+          scope(:application, ->(app_id) { where(api_key: app_id) })
           scope(:yext_username, ->(username) { where(yext_username: username) })
           scope(:yext_user_id, ->(user_id) { where(yext_user_id: user_id) })
 

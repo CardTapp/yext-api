@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
 RSpec.shared_examples("default scopes") do
-  it "has the with_version scope" do
-    scope = described_class.all.with_version("my version")
+  it "has the version scope" do
+    scope = described_class.all.version("my version")
 
     expect(scope.params[:v]).to eq "my version"
   end
 
-  it "has the with_application scope" do
-    scope = described_class.all.with_application("my application")
+  it "has the application scope" do
+    scope = described_class.all.application("my application")
 
     expect(scope.params[:api_key]).to eq "my application"
   end

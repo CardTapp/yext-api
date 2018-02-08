@@ -28,17 +28,15 @@ Gem::Specification.new do |spec|
   end
 
   spec.bindir        = "exe"
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
+  spec.add_dependency "memoist", "~> 0"
   spec.add_dependency "rails", "> 4"
   spec.add_dependency "spyke", "~> 5"
 
   spec.add_development_dependency "bundler"
   spec.add_development_dependency "codecov"
   spec.add_development_dependency "cornucopia"
-  # spec.add_development_dependency "dotenv", "~> 2.0"
-  # spec.add_development_dependency "dotenv-rails"
   spec.add_development_dependency "hashie"
   spec.add_development_dependency "rake", "~> 10"
   spec.add_development_dependency "rspec"

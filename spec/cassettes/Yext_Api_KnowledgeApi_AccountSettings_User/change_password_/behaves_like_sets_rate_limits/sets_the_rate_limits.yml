@@ -1,0 +1,76 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.yext.com/v2/accounts/my-test-account-id-2/users/test-user-test-id-1?api_key=fake_api_key&v=20161012
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Fri, 02 Feb 2018 17:40:07 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '405'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '5000'
+      rate-limit-remaining:
+      - '4985'
+      rate-limit-reset:
+      - '1517594400'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"dc5a1df9-fbbe-4a4c-afec-c122fad124cf","errors":[]},"response":{"id":"test-user-test-id-1","firstName":"Test","lastName":"User","username":"automated_test@cardtapp.com","emailAddress":"automated_test@cardtapp.com","lastLoginDate":"1517461200","sso":false,"acl":[{"roleId":"20","roleName":"Account
+        Admin","on":"my-test-account-id-2","accountId":"my-test-account-id-2","onType":"ACCOUNT"}]}}'
+    http_version: 
+  recorded_at: Fri, 02 Feb 2018 17:40:07 GMT
+- request:
+    method: put
+    uri: https://sandbox.yext.com/v2/accounts/my-test-account-id-2/users/test-user-test-id-1/password?api_key=fake_api_key&v=20161012
+    body:
+      encoding: UTF-8
+      string: '{"newPassword":"password12"}'
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Fri, 02 Feb 2018 17:40:15 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '82'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '5000'
+      rate-limit-remaining:
+      - '4984'
+      rate-limit-reset:
+      - '1517594400'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"1c243b82-7c52-4ce2-87fd-4112086ef1ab","errors":[]},"response":{}}'
+    http_version: 
+  recorded_at: Fri, 02 Feb 2018 17:40:15 GMT
+recorded_with: VCR 4.0.0

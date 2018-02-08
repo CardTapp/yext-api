@@ -1,0 +1,41 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.yext.com/v2/accounts?api_key=fake_api_key&v=20161012
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Fri, 02 Feb 2018 00:32:46 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '1334'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '5000'
+      rate-limit-remaining:
+      - '4996'
+      rate-limit-reset:
+      - '1517533200'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"a2ac766b-2e74-4bdb-bae9-5b13f2155de0","errors":[]},"response":{"count":5,"accounts":[{"accountId":"fake_account_id","locationCount":0,"subAccountCount":4,"accountName":"CardTapp","contactFirstName":"CardTapp","contactLastName":"Development","contactPhone":"","contactEmail":"yext_development@cardtapp.com"},{"accountId":"ctpinck","locationCount":1,"subAccountCount":0,"parentAccountId":"fake_account_id","accountName":"Cardtapp:
+        Pascal Pinck","contactFirstName":"CardTapp","contactLastName":"Development","contactPhone":"","contactEmail":"yext_development@cardtapp.com"},{"accountId":"ct-dustin","locationCount":1,"subAccountCount":0,"parentAccountId":"fake_account_id","accountName":"CardTapp
+        North","contactFirstName":"CardTapp","contactLastName":"Development","contactPhone":"","contactEmail":"yext_development@cardtapp.com"},{"accountId":"5465456","locationCount":1,"subAccountCount":0,"parentAccountId":"fake_account_id","accountName":"xzxcxcczx","contactFirstName":"CardTapp","contactLastName":"Development","contactPhone":"","contactEmail":"yext_development@cardtapp.com"},{"accountId":"my-test-account-id-2","locationCount":1,"subAccountCount":0,"parentAccountId":"fake_account_id","accountName":"RSpec
+        Test Account 2","contactFirstName":"CardTapp","contactLastName":"Development","contactPhone":"","contactEmail":"yext_development@cardtapp.com"}]}}'
+    http_version: 
+  recorded_at: Fri, 02 Feb 2018 00:32:46 GMT
+recorded_with: VCR 4.0.0

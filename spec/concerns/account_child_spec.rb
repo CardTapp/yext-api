@@ -15,6 +15,9 @@ RSpec.describe Yext::Api::Concerns::AccountChild do
 
   after(:each) do
     FakeSpyke.current_scope = nil
+
+    FakeSpyke.reset_uri
+    OtherFakeSpyke.reset_uri
   end
 
   around(:each) do |example_proxy|
@@ -36,20 +39,20 @@ RSpec.describe Yext::Api::Concerns::AccountChild do
       expect(path.to_s).to be_include("accounts/testing%20account_id/")
     end
 
-    it "includes the passed account_id using with_account" do
-      FakeSpyke.current_scope = FakeSpyke.with_account("another account_id")
+    it "includes the passed account_id using account" do
+      FakeSpyke.current_scope = FakeSpyke.account("another account_id")
 
       expect(path.to_s).to be_include("accounts/another%20account_id/")
     end
 
-    it "includes the passed account_id using with_account with an KnowledgeApi account" do
-      FakeSpyke.current_scope = FakeSpyke.with_account(Yext::Api::KnowledgeApi::AccountSettings::Account.new(id: "another account_id"))
+    it "includes the passed account_id using account with an KnowledgeApi account" do
+      FakeSpyke.current_scope = FakeSpyke.account(Yext::Api::KnowledgeApi::AccountSettings::Account.new(id: "another account_id"))
 
       expect(path.to_s).to be_include("accounts/another%20account_id/")
     end
 
-    it "includes the passed account_id using with_account with an AdministrativeApi account" do
-      FakeSpyke.current_scope = FakeSpyke.with_account(Yext::Api::AdministrativeApi::Account.new(id: "another account_id"))
+    it "includes the passed account_id using account with an AdministrativeApi account" do
+      FakeSpyke.current_scope = FakeSpyke.account(Yext::Api::AdministrativeApi::Account.new(id: "another account_id"))
 
       expect(path.to_s).to be_include("accounts/another%20account_id/")
     end
@@ -81,6 +84,51 @@ RSpec.describe Yext::Api::Concerns::AccountChild do
 
     it "prepends accounts/:account_id if start /" do
       expect(Yext::Api::Concerns::AccountChild.with_account_path("/fake_path")).to eq "accounts/:account_id/fake_path"
+    end
+  end
+
+  shared_examples("it cleans up associations") do
+    it "resets the association" do
+      account_class.new(id: "account_id").other_fake_spykes.with("accounts/:account_id/other_custom_path/(:id)")
+      account_class.new(id: "account_id").fake_spykes.with("accounts/:account_id/custom_path/(:id)")
+
+      expect(account_class.new(id: "account_id").other_fake_spykes.uri.to_s).to eq "accounts/:account_id/other_custom_path/(:id)"
+      expect(account_class.new(id: "account_id").fake_spykes.uri.to_s).to eq "accounts/:account_id/custom_path/(:id)"
+
+      OtherFakeSpyke.reset_uri
+
+      expect(OtherFakeSpyke.new.uri.to_s).to eq "accounts/testing%20account_id/fakespyke"
+      expect(account_class.new(id: "account_id").other_fake_spykes.uri.to_s).to eq "accounts/:account_id/fakespyke"
+      expect(account_class.new(id: "account_id").fake_spykes.uri.to_s).to eq "accounts/:account_id/custom_path/(:id)"
+    end
+  end
+
+  describe Yext::Api::KnowledgeApi::AccountSettings::Account do
+    let(:account_class) { Yext::Api::KnowledgeApi::AccountSettings::Account }
+
+    it_behaves_like "it cleans up associations"
+  end
+
+  describe Yext::Api::AdministrativeApi::Account do
+    let(:account_class) { Yext::Api::AdministrativeApi::Account }
+
+    it_behaves_like "it cleans up associations"
+  end
+
+  describe "The problem in Spyke" do
+    class ChildSpyke < Spyke::Base
+    end
+
+    class ParentSpyke < Spyke::Base
+      has_many :child_spykes, class_name: "ChildSpyke"
+    end
+
+    it "resets the association" do
+      expect(ParentSpyke.new(id: 1).child_spykes.uri).to eq "parent_spykes/:parent_spyke_id/child_spykes/(:id)"
+      ParentSpyke.new(id: 1).child_spykes.with("parent_spykes/(:parent_spyke_id)/custom_path_spyke/(:id)")
+
+      pending "this next line fails"
+      expect(ParentSpyke.new(id: 1).child_spykes.uri).to eq "parent_spykes/:parent_spyke_id/child_spykes/(:id)"
     end
   end
 end

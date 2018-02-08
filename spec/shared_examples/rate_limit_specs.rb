@@ -5,12 +5,12 @@ RSpec.shared_examples("sets rate limits") do |test_call|
 
   before(:each) do
     all_modules.each do |rate_module|
-      rate_module.update_rates(remaining: 0, limit: 0, reset_at: nil)
+      rate_module.send(:update_rates, remaining: 0, limit: 0, reset_at: nil)
     end
   end
 
   it "sets the rate limits" do
-    test_call.call
+    instance_exec(&test_call)
 
     expect(described_class.parents[-4].rate_limit_limit).to be > 0
     expect(described_class.parents[-4].rate_limit_remaining).to be > 0

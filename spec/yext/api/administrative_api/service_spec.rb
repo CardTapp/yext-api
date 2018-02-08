@@ -27,11 +27,23 @@ RSpec.describe Yext::Api::AdministrativeApi::Service, :vcr do
     end
   end
 
-  describe "cancel_services" do
-    it "cancels services" do
-      pending "This is not available for testing yet."
+  describe "cancel_services!" do
+    after(:each) do
+      Yext::Api::AdministrativeApi::AddRequest.add_services!(existingLocationId:        "my-test-location-id-2",
+                                                             existingLocationAccountId: "my-test-account-id-2",
+                                                             skus:                      ["DEV-00010000"])
+    end
 
-      expect(true).to be_falsey
+    it "remove services from existing locations" do
+      expect { Yext::Api::AdministrativeApi::Service.cancel_services!(locationId: "my-test-location-id-2") }.
+          to(change { Yext::Api::AdministrativeApi::Service.all.to_a.count }.by(-1))
+    end
+
+    it "can be called from a location" do
+      location = Yext::Api::KnowledgeApi::KnowledgeManager::Location.account("my-test-account-id-2").find("my-test-location-id-2")
+
+      expect { location.cancel_services! }.
+          to(change { Yext::Api::AdministrativeApi::Service.all.to_a.count }.by(-1))
     end
   end
 end

@@ -15,9 +15,6 @@ module Yext
       #           :path_regex: https://liveapi.yext.com/v2/accounts/[^/]+?/locations
       #           :default_version: 20161012
       #           :documentation: http://developer.yext.com/docs/live-api/#operation/locationsList
-      #           :comment: >
-      #             Get multiple Locations (primary profile only). Filters are evaluated against all language
-      #             profiles as well as the primary profile.
       #           :sandbox_only: false
       #         - :action: :show
       #           :method: :get
@@ -25,7 +22,6 @@ module Yext
       #           :path_regex: https://liveapi.yext.com/v2/accounts/[^/]+?/locations/[^/]+??
       #           :default_version: 20161012
       #           :documentation: http://developer.yext.com/docs/live-api/#operation/getLocation
-      #           :comment: Gets the primary profile for a single Location.
       #           :sandbox_only: false
       class Location < Yext::Api::Utils::ApiBase
         include Yext::Api::Concerns::AccountChild

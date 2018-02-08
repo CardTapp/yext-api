@@ -52,19 +52,19 @@ The global configurations can be initialized with ENV values.  The following con
   This is the Account ID that is used in the path to API endpoints that require an account ID.  This
   value will default to `"me"` if not specified.
 
-  You can specify this on a per-call basis using `with_account("new account_id")`.  This option is only
+  You can specify this on a per-call basis using `account("new account_id")`.  This option is only
   available for objects that require an account ID for all calls.
 
 * `api_key` - `ENV["YEXT_API_KEY"]`
   This is the API_KEY from the Yext Application that you are using.
 
-  You can specify this on a per-call basis using `with_application("new application key")`.
+  You can specify this on a per-call basis using `application("new application key")`.
 
 * `api_version` - `ENV["YEXT_API_VERSION"]`
   This is the version number of the `v2` API endpoint to be used.  This value be defaulted to the most
   recent version of the API that the gem is aware of or `"2016101"`
 
-  You can specify this on a per-call basis using `with_version("new version")`.
+  You can specify this on a per-call basis using `version("new version")`.
 
 * `yext_username` - `ENV["YEXT_USERNAME"]`
   This is the username to be associated with changes in Yext.  This option is available on all calls but
@@ -93,9 +93,21 @@ The global configurations can be initialized with ENV values.  The following con
 
 ### General Usage
 
-The API namespaces are setup to mimic the structure of the Yext API documentation to make it easier.
-to find or guess at an objects name.  Objects are defined based on the routes for those objects.  The
-following classes are planned based on that structure:
+The API namespaces are setup to mimic the structure of the Yext API documentation to make it easier
+to find or guess at an objects name.  Objects are defined based on the routes for those objects.
+
+In general to see what an object will look like or what to pass in as arguments to some custom routes
+that update or create objects, please refer to the Yext API documentation:
+
+* http://developer.yext.com/docs/api-reference/
+* http://developer.yext.com/docs/administrative-api/
+* http://developer.yext.com/docs/live-api/
+* http://developer.yext.com/docs/webhooks/
+
+The config/api.yml file contains links to the documentation for every action.  In general, each
+class should also include the same information to point you at/to the related documentation.
+
+The following classes are planned based on that structure:
 
 * AdministrativeApi::Account
 * AdministrativeApi::AddRequest
@@ -159,7 +171,7 @@ account = Yext::Api::AdministrativeApi::Account.find("my-id")
 #### Overriding configuration options
 
 ```ruby
-other_account_services = Yext::Api::AdministrativeApi::Service.with_account("6664444").with_application("777821019292928").to_a
+other_account_services = Yext::Api::AdministrativeApi::Service.account("6664444").application("777821019292928").to_a
 ```
 
 #### Using custom actions

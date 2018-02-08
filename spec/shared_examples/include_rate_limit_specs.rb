@@ -6,7 +6,7 @@ RSpec.shared_examples("includes RateLimits") do
   let(:reset_at) { rand(1_000..2_000).seconds.from_now }
 
   before(:each) do
-    described_class.update_rates(remaining: remaining, limit: limit, reset_at: reset_at)
+    described_class.send(:update_rates, remaining: remaining, limit: limit, reset_at: reset_at)
   end
 
   it "includes RateLimits" do

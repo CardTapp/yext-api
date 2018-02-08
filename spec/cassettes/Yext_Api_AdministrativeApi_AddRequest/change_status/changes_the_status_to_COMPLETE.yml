@@ -1,0 +1,187 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.yext.com/v2/accounts/fake_account_id/addrequests/224757?api_key=fake_api_key&v=20161012
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Tue, 30 Jan 2018 18:10:32 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '532'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '1000'
+      rate-limit-remaining:
+      - '999'
+      rate-limit-reset:
+      - '1517338800'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"77416364-28d2-4bba-a46f-734539643b89","errors":[]},"response":{"id":224757,"locationMode":"NEW","newLocationId":"my-test-location-id-2","newLocationAccountId":"my-test-account-id-2","newLocationAccountName":"RSpec
+        Test Account 2","skus":["DEV-00010000"],"agreementId":3338,"status":"REVIEW","dateSubmitted":"2018-01-26T18:38:29","statusDetail":"Yext
+        is reviewing this request to ensure that the specified location does not already
+        have incompatible service in another account. You do not need to take any
+        action."}}'
+    http_version: 
+  recorded_at: Tue, 30 Jan 2018 18:10:33 GMT
+- request:
+    method: get
+    uri: https://sandbox.yext.com/v2/accounts/my-test-account-id-2?api_key=fake_api_key&v=20161012
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Tue, 30 Jan 2018 23:24:33 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '169'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '5000'
+      rate-limit-remaining:
+      - '4998'
+      rate-limit-reset:
+      - '1517356800'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"83e166b9-5d59-4ec8-935e-256c943e705c","errors":[{"code":1000,"type":"FATAL_ERROR","message":"Customer
+        not found: my-test-account-id-2"}]},"response":{}}'
+    http_version: 
+  recorded_at: Tue, 30 Jan 2018 23:24:33 GMT
+- request:
+    method: post
+    uri: https://sandbox.yext.com/v2/accounts/fake_account_id/processaddrequest?api_key=fake_api_key&v=20161012
+    body:
+      encoding: UTF-8
+      string: '{"addRequestId":224757,"status":"COMPLETE"}'
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Tue, 30 Jan 2018 18:10:32 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '532'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '1000'
+      rate-limit-remaining:
+      - '999'
+      rate-limit-reset:
+      - '1517338800'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"errors":[],"uuid":"ca626724-dec5-4afa-95f2-04c11220b388"},"response":{}}'
+    http_version: 
+  recorded_at: Tue, 30 Jan 2018 18:21:34 GMT
+- request:
+    method: get
+    uri: https://sandbox.yext.com/v2/accounts/my-test-account-id-2?api_key=fake_api_key&v=20161012
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Tue, 30 Jan 2018 18:33:27 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '346'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '5000'
+      rate-limit-remaining:
+      - '4999'
+      rate-limit-reset:
+      - '1517338800'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"41cb0f86-1f7b-487a-9ee8-4745cbb586cd","errors":[]},"response":{"accountId":"my-test-account-id-2","locationCount":1,"subAccountCount":0,"parentAccountId":"fake_account_id","accountName":"RSpec
+        Test Account 2","contactFirstName":"CardTapp","contactLastName":"Development","contactPhone":"","contactEmail":"yext_development@cardtapp.com"}}'
+    http_version: 
+  recorded_at: Tue, 30 Jan 2018 18:33:27 GMT
+- request:
+    method: get
+    uri: https://sandbox.yext.com/v2/accounts/something-stupid?api_key=fake_api_key&v=20161012
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Thu, 01 Feb 2018 23:07:12 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '165'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '5000'
+      rate-limit-remaining:
+      - '4998'
+      rate-limit-reset:
+      - '1517529600'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"22e4056d-4b20-4d13-809b-57d4079aac96","errors":[{"code":1000,"type":"FATAL_ERROR","message":"Customer
+        not found: something-stupid"}]},"response":{}}'
+    http_version: 
+  recorded_at: Thu, 01 Feb 2018 23:07:12 GMT
+recorded_with: VCR 4.0.0

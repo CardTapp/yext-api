@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.yext.com/v2/accounts/fake_account_id/roles?api_key=fake_api_key&v=20161012
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Mon, 05 Feb 2018 18:39:57 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '655'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '5000'
+      rate-limit-remaining:
+      - '4999'
+      rate-limit-reset:
+      - '1517857200'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"9c607809-2850-4d32-a37b-da5b2f5925eb","errors":[]},"response":{"roles":[{"id":"1","name":"Full
+        Control"},{"id":"3","name":"Location Manager"},{"id":"20","name":"Account
+        Admin"},{"id":"42","name":"Location Manager + Linked Accounts"},{"id":"56","name":"Report
+        Admin"},{"id":"57","name":"Review only (dlin test)"},{"id":"103","name":"Account
+        Admin + Widgets"},{"id":"105","name":"Social and Reviews"},{"id":"106","name":"View
+        Only with Duplicate Suppression"},{"id":"196","name":"Partner: Full Control
+        Minus Billing"},{"id":"238","name":"Account Admin + Widgets + Social Posting"},{"id":"239","name":"Store
+        Manager - General"}],"count":12}}'
+    http_version: 
+  recorded_at: Mon, 05 Feb 2018 18:39:57 GMT
+recorded_with: VCR 4.0.0

@@ -2,9 +2,11 @@
 
 source "https://rubygems.org"
 
-git_source(:github) { |_repo_name| "https://github.com/RealNobody/yext-api" }
+git_source(:github) { |_repo_name| "https://github.com/CardTapp/yext-api" }
 
 # Specify your gem's dependencies in yext-api.gemspec
 gemspec
 
+gem "codecov"
 gem "gem-release"
+gem "simplecov"

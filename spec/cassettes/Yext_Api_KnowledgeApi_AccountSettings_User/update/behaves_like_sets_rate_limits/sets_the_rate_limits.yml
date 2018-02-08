@@ -1,0 +1,151 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.yext.com/v2/accounts/my-test-account-id-2/users/test-user-test-id-1?api_key=fake_api_key&v=20161012
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Fri, 02 Feb 2018 16:47:56 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '405'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '5000'
+      rate-limit-remaining:
+      - '4994'
+      rate-limit-reset:
+      - '1517590800'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"15b397de-f494-4167-8720-f188948b687a","errors":[]},"response":{"id":"test-user-test-id-1","firstName":"Test","lastName":"User","username":"automated_test@cardtapp.com","emailAddress":"automated_test@cardtapp.com","lastLoginDate":"1517461200","sso":false,"acl":[{"roleId":"20","roleName":"Account
+        Admin","on":"my-test-account-id-2","accountId":"my-test-account-id-2","onType":"ACCOUNT"}]}}'
+    http_version: 
+  recorded_at: Fri, 02 Feb 2018 16:47:56 GMT
+- request:
+    method: put
+    uri: https://sandbox.yext.com/v2/accounts/my-test-account-id-2/users/test-user-test-id-1?api_key=fake_api_key&v=20161012
+    body:
+      encoding: UTF-8
+      string: '{"firstName":"Changed","lastName":"User","username":"automated_test@cardtapp.com","emailAddress":"automated_test@cardtapp.com","lastLoginDate":"1517461200","sso":false,"acl":[{"roleId":"20","roleName":"Account
+        Admin","on":"my-test-account-id-2","accountId":"my-test-account-id-2","onType":"ACCOUNT"}],"id":"test-user-test-id-1"}'
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Fri, 02 Feb 2018 16:48:06 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '108'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '5000'
+      rate-limit-remaining:
+      - '4993'
+      rate-limit-reset:
+      - '1517590800'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"c65244a5-a852-4692-8108-04cc477c0e08","errors":[]},"response":{"id":"test-user-test-id-1"}}'
+    http_version: 
+  recorded_at: Fri, 02 Feb 2018 16:48:06 GMT
+- request:
+    method: get
+    uri: https://sandbox.yext.com/v2/accounts/my-test-account-id-2/users/test-user-test-id-1?api_key=fake_api_key&v=20161012
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Fri, 02 Feb 2018 16:48:12 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '408'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '5000'
+      rate-limit-remaining:
+      - '4992'
+      rate-limit-reset:
+      - '1517590800'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"64aeb7c6-6db5-47ec-b5fb-2748e61b53df","errors":[]},"response":{"id":"test-user-test-id-1","firstName":"Changed","lastName":"User","username":"automated_test@cardtapp.com","emailAddress":"automated_test@cardtapp.com","lastLoginDate":"1517461200","sso":false,"acl":[{"roleId":"20","roleName":"Account
+        Admin","on":"my-test-account-id-2","accountId":"my-test-account-id-2","onType":"ACCOUNT"}]}}'
+    http_version: 
+  recorded_at: Fri, 02 Feb 2018 16:48:12 GMT
+- request:
+    method: put
+    uri: https://sandbox.yext.com/v2/accounts/my-test-account-id-2/users/test-user-test-id-1?api_key=fake_api_key&v=20161012
+    body:
+      encoding: UTF-8
+      string: '{"firstName":"Test","lastName":"User","username":"automated_test@cardtapp.com","emailAddress":"automated_test@cardtapp.com","lastLoginDate":"1517461200","sso":false,"acl":[{"roleId":"20","roleName":"Account
+        Admin","on":"my-test-account-id-2","accountId":"my-test-account-id-2","onType":"ACCOUNT"}],"id":"test-user-test-id-1"}'
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Fri, 02 Feb 2018 16:49:48 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '108'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '5000'
+      rate-limit-remaining:
+      - '4991'
+      rate-limit-reset:
+      - '1517590800'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"adf01cce-0a16-46d9-b4f3-6ff43f122c9c","errors":[]},"response":{"id":"test-user-test-id-1"}}'
+    http_version: 
+  recorded_at: Fri, 02 Feb 2018 16:49:48 GMT
+recorded_with: VCR 4.0.0

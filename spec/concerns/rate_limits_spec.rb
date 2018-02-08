@@ -32,8 +32,8 @@ RSpec.describe Yext::Api::Concerns::RateLimits do
   end
 
   it "has separate limits for each module" do
-    RateLimitModuleOne.update_rates(remaining: 1_000, limit: 2_000, reset_at: 2.hours.ago)
-    RateLimitModuleTwo.update_rates(remaining: 3_000, limit: 4_000, reset_at: 2.hours.from_now)
+    RateLimitModuleOne.send(:update_rates, remaining: 1_000, limit: 2_000, reset_at: 2.hours.ago)
+    RateLimitModuleTwo.send(:update_rates, remaining: 3_000, limit: 4_000, reset_at: 2.hours.from_now)
 
     expect(RateLimitModuleOne.rate_limit_remaining).to eq 1_000
     expect(RateLimitModuleTwo.rate_limit_remaining).to eq 3_000

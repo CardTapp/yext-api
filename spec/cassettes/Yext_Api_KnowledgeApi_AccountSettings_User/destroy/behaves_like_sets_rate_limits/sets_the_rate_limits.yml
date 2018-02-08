@@ -1,0 +1,188 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.yext.com/v2/accounts/my-test-account-id-2/users?api_key=fake_api_key&v=20161012
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Fri, 02 Feb 2018 17:25:25 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '427'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '5000'
+      rate-limit-remaining:
+      - '4993'
+      rate-limit-reset:
+      - '1517594400'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"b9d13194-fecf-4205-a413-7c32dc51234c","errors":[]},"response":{"count":1,"users":[{"id":"test-user-test-id-1","firstName":"Test","lastName":"User","username":"automated_test@cardtapp.com","emailAddress":"automated_test@cardtapp.com","lastLoginDate":"1517461200","sso":false,"acl":[{"roleId":"20","roleName":"Account
+        Admin","on":"my-test-account-id-2","accountId":"my-test-account-id-2","onType":"ACCOUNT"}]}]}}'
+    http_version: 
+  recorded_at: Fri, 02 Feb 2018 17:25:25 GMT
+- request:
+    method: post
+    uri: https://sandbox.yext.com/v2/accounts/my-test-account-id-2/users?api_key=fake_api_key&v=20161012
+    body:
+      encoding: UTF-8
+      string: '{"firstName":"Other","lastName":"Test","emailAddress":"other_automated_test@cardtapp.com","acl":[{"roleId":"20","onType":"ACCOUNT","on":"my-test-account-id-2","accountId":"my-test-account-id-2"}],"password":"password12","id":"test-user-test-id-2"}'
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Fri, 02 Feb 2018 17:25:50 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '108'
+      connection:
+      - keep-alive
+      location:
+      - https://api.yext.com/v2/customers/my-test-account-id-2/users/test-user-test-id-2
+      rate-limit-limit:
+      - '5000'
+      rate-limit-remaining:
+      - '4992'
+      rate-limit-reset:
+      - '1517594400'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"9e283223-1e5e-40c6-86ca-0f9211eb8fb4","errors":[]},"response":{"id":"test-user-test-id-2"}}'
+    http_version: 
+  recorded_at: Fri, 02 Feb 2018 17:25:50 GMT
+- request:
+    method: get
+    uri: https://sandbox.yext.com/v2/accounts/my-test-account-id-2/users?api_key=fake_api_key&v=20161012
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Fri, 02 Feb 2018 17:25:50 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '737'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '5000'
+      rate-limit-remaining:
+      - '4991'
+      rate-limit-reset:
+      - '1517594400'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"1cae3115-3ab3-43cd-b3b0-f06541f6d1ae","errors":[]},"response":{"count":2,"users":[{"id":"test-user-test-id-1","firstName":"Test","lastName":"User","username":"automated_test@cardtapp.com","emailAddress":"automated_test@cardtapp.com","lastLoginDate":"1517461200","sso":false,"acl":[{"roleId":"20","roleName":"Account
+        Admin","on":"my-test-account-id-2","accountId":"my-test-account-id-2","onType":"ACCOUNT"}]},{"id":"test-user-test-id-2","firstName":"Other","lastName":"Test","username":"other_automated_test@cardtapp.com","emailAddress":"other_automated_test@cardtapp.com","sso":false,"acl":[{"roleId":"20","roleName":"Account
+        Admin","on":"my-test-account-id-2","accountId":"my-test-account-id-2","onType":"ACCOUNT"}]}]}}'
+    http_version: 
+  recorded_at: Fri, 02 Feb 2018 17:25:50 GMT
+- request:
+    method: delete
+    uri: https://sandbox.yext.com/v2/accounts/my-test-account-id-2/users/test-user-test-id-2?api_key=fake_api_key&v=20161012
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Fri, 02 Feb 2018 17:26:43 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '82'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '5000'
+      rate-limit-remaining:
+      - '4990'
+      rate-limit-reset:
+      - '1517594400'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"b409ad6a-5557-4051-b9fb-419ab2dc9b4a","errors":[]},"response":{}}'
+    http_version: 
+  recorded_at: Fri, 02 Feb 2018 17:26:43 GMT
+- request:
+    method: get
+    uri: https://sandbox.yext.com/v2/accounts/my-test-account-id-2/users?api_key=fake_api_key&v=20161012
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Fri, 02 Feb 2018 17:26:52 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '427'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '5000'
+      rate-limit-remaining:
+      - '4989'
+      rate-limit-reset:
+      - '1517594400'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"6b556948-7f44-4554-983f-f965d6edf478","errors":[]},"response":{"count":1,"users":[{"id":"test-user-test-id-1","firstName":"Test","lastName":"User","username":"automated_test@cardtapp.com","emailAddress":"automated_test@cardtapp.com","lastLoginDate":"1517461200","sso":false,"acl":[{"roleId":"20","roleName":"Account
+        Admin","on":"my-test-account-id-2","accountId":"my-test-account-id-2","onType":"ACCOUNT"}]}]}}'
+    http_version: 
+  recorded_at: Fri, 02 Feb 2018 17:26:52 GMT
+recorded_with: VCR 4.0.0

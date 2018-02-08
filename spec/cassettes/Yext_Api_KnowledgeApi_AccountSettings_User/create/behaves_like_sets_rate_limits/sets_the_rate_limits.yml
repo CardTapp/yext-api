@@ -1,0 +1,116 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.yext.com/v2/accounts/my-test-account-id-2/users?api_key=fake_api_key&v=20161012
+    body:
+      encoding: UTF-8
+      string: '{"firstName":"Test","lastName":"User","emailAddress":"automated_test@cardtapp.com","acl":[{"roleId":"20","onType":"ACCOUNT","on":"my-test-account-id-2","accountId":"my-test-account-id-2"}],"password":"password12","id":"test-user-test-id-1"}'
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Fri, 02 Feb 2018 00:57:13 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '108'
+      connection:
+      - keep-alive
+      location:
+      - https://api.yext.com/v2/customers/my-test-account-id-2/users/test-user-test-id-1
+      rate-limit-limit:
+      - '5000'
+      rate-limit-remaining:
+      - '4992'
+      rate-limit-reset:
+      - '1517533200'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"11db7366-8403-4f5e-9012-cf427c19e914","errors":[]},"response":{"id":"test-user-test-id-1"}}'
+    http_version: 
+  recorded_at: Fri, 02 Feb 2018 00:57:13 GMT
+- request:
+    method: get
+    uri: https://sandbox.yext.com/v2/accounts/my-test-account-id-2/users/test-user-test-id-1?api_key=fake_api_key&v=20161012
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Fri, 02 Feb 2018 16:24:19 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '405'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '5000'
+      rate-limit-remaining:
+      - '4999'
+      rate-limit-reset:
+      - '1517590800'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"b72c7c11-3346-44dc-9c24-d52ccdc5a787","errors":[]},"response":{"id":"test-user-test-id-1","firstName":"Test","lastName":"User","username":"automated_test@cardtapp.com","emailAddress":"automated_test@cardtapp.com","lastLoginDate":"1517461200","sso":false,"acl":[{"roleId":"20","roleName":"Account
+        Admin","on":"my-test-account-id-2","accountId":"my-test-account-id-2","onType":"ACCOUNT"}]}}'
+    http_version: 
+  recorded_at: Fri, 02 Feb 2018 16:23:46 GMT
+- request:
+    method: put
+    uri: https://sandbox.yext.com/v2/accounts/my-test-account-id-2/users/test-user-test-id-1?api_key=fake_api_key&v=20161012
+    body:
+      encoding: UTF-8
+      string: '{"firstName":"Test","lastName":"User","emailAddress":"automated_test@cardtapp.com","acl":[{"roleId":"20","onType":"ACCOUNT","on":"my-test-account-id-2","accountId":"my-test-account-id-2"}],"password":"password12","id":"test-user-test-id-1"}'
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Fri, 02 Feb 2018 17:10:07 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '169'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '5000'
+      rate-limit-remaining:
+      - '4999'
+      rate-limit-reset:
+      - '1517594400'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"9a44aaf6-1b9b-4f60-adf3-7bfc3f5c8787","errors":[{"code":4035,"type":"FATAL_ERROR","message":"username:
+        The field username is required"}]},"response":{}}'
+    http_version: 
+  recorded_at: Fri, 02 Feb 2018 17:10:07 GMT
+recorded_with: VCR 4.0.0
