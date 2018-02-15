@@ -9,7 +9,7 @@ module Yext
 
         class_methods do
           def all
-            (constants - %i[ClassMethods]).map { |c| const_get(c) }
+            (constants - %i[ClassMethods]).map { |c| const_get(c) }.reject { |constant| constant.is_a?(Module) }
           end
         end
       end

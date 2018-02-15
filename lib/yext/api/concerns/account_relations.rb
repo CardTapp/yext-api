@@ -24,6 +24,7 @@ module Yext
 
           # KnowledgeApi::AccountSettings
           has_many :users, class_name: "Yext::Api::KnowledgeApi::AccountSettings::User"
+          has_many :roles, class_name: "Yext::Api::KnowledgeApi::AccountSettings::Role"
 
           # LiveApi
           has_many :live_locations, class_name: "Yext::Api::LiveApi::Location"
