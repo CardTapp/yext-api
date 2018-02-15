@@ -4,8 +4,6 @@ require "rails_helper"
 
 RSpec.describe Yext::Api::Enumerations::ErrorCodes::CustomersErrros do
   describe "all" do
-    it_behaves_like "constants are Error Codes"
-
     it "returns all request statuses" do
       expect(Yext::Api::Enumerations::ErrorCodes::CustomersErrros.all.count).to eq 33
     end

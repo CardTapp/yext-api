@@ -24,7 +24,7 @@ RSpec.describe Yext::Api::Enumerations::ErrorCodes do
     end
 
     it "returns all sub statuses" do
-      expect(Yext::Api::Enumerations::ErrorCodes.all.sort_by! { |obj| "#{obj[:code]} #{obj[:message]}" }).
+      expect(Yext::Api::Enumerations::ErrorCodes.all.sort).
           to eq((Yext::Api::Enumerations::ErrorCodes::AgreementsErrors.all +
               Yext::Api::Enumerations::ErrorCodes::AnalyticsErrors.all +
               Yext::Api::Enumerations::ErrorCodes::CustomersErrros.all +
@@ -39,7 +39,7 @@ RSpec.describe Yext::Api::Enumerations::ErrorCodes do
               Yext::Api::Enumerations::ErrorCodes::SocialErrors.all +
               Yext::Api::Enumerations::ErrorCodes::SubscriptionsErrors.all +
               Yext::Api::Enumerations::ErrorCodes::SuppressionErrors.all +
-              Yext::Api::Enumerations::ErrorCodes::UsersErrors.all).sort_by! { |obj| "#{obj[:code]} #{obj[:message]}" })
+              Yext::Api::Enumerations::ErrorCodes::UsersErrors.all).sort)
     end
   end
 end
