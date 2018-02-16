@@ -1,0 +1,39 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.yext.com/v2/accounts/my-test-account-id-2/optimizationtasks?api_key=fake_api_key&taskIds=1&v=20161012
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Fri, 16 Feb 2018 18:25:48 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '244'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '5000'
+      rate-limit-remaining:
+      - '4997'
+      rate-limit-reset:
+      - '1518807600'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"87cf7f5d-688a-499e-9ac3-70975c67963b","errors":[]},"response":{"optimizationTasks":[{"id":1,"name":"Add
+        a logo","description":"Help customers recognize your brand or storefront.","locationsEligible":1,"locationsCompleted":0}]}}'
+    http_version: 
+  recorded_at: Fri, 16 Feb 2018 18:25:48 GMT
+recorded_with: VCR 4.0.0

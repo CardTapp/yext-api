@@ -793,6 +793,8 @@
             :default_version: 20161012
             :documentation: http://developer.yext.com/docs/api-reference/#operation/getOptimizationTasks
             :sandbox_only: false
+      :optimization_link:
+        :actions:
           - :action: :show
             :method: :get
             :endpoint: https://api.yext.com/v2/accounts/{accountId}/optimizationlink

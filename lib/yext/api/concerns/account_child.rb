@@ -29,8 +29,8 @@ module Yext
               next if account_class.association?(klass)
 
               klass_uri = klass.instance_variable_get(:@uri)
-              helper_warnings(account_class, klass, klass_uri)
               klass_uri ||= klass.send(:default_uri)
+              helper_warnings(account_class, klass, klass_uri)
 
               add_has_many_relation(account_class, klass, klass_uri)
             end

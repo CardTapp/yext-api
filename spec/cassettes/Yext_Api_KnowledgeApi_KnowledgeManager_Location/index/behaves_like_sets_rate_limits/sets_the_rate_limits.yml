@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://sandbox.yext.com/v2/accounts/fake_account_id/locations?api_key=fake_api_key&v=20161012
+    uri: https://sandbox.yext.com/v2/accounts/my-test-account-id-2/locations?api_key=fake_api_key&v=20161012
     body:
       encoding: US-ASCII
       string: ''
@@ -17,22 +17,25 @@ http_interactions:
       server:
       - nginx/1.10.2
       date:
-      - Fri, 26 Jan 2018 16:30:48 GMT
+      - Fri, 16 Feb 2018 18:27:36 GMT
       content-type:
       - application/json; charset=utf-8
       content-length:
-      - '106'
+      - '853'
       connection:
       - keep-alive
       rate-limit-limit:
       - '5000'
       rate-limit-remaining:
-      - '4998'
+      - '4993'
       rate-limit-reset:
-      - '1516986000'
+      - '1518807600'
     body:
       encoding: UTF-8
-      string: '{"meta":{"uuid":"27b05724-625c-43f0-8b7f-c934cbbf5bd2","errors":[]},"response":{"count":0,"locations":[]}}'
+      string: '{"meta":{"uuid":"79891f86-a551-47d4-94e1-d41654a33f3d","errors":[]},"response":{"count":1,"locations":[{"id":"my-test-location-id-2","uid":"EZZJa","timestamp":1517336435360,"accountId":"my-test-account-id-2","locationName":"RSpec
+        Test Location 2","address":"2756 Morning glory Cir.","address2":"Suite 200","city":"Boston","state":"AL","zip":"90410","countryCode":"US","language":"en","suppressAddress":true,"phone":"4255551211","isPhoneTracked":false,"categoryIds":["1146752"],"featuredMessage":"This
+        is so cool too!","featuredMessageUrl":"https://www.cardtapp.com/buy","websiteUrl":"https://www.cardtapp.com","description":"My
+        cool RSpec location","yextDisplayLat":29.6708315,"yextDisplayLng":-95.15773689999999,"yextRoutableLat":34.010932,"yextRoutableLng":-118.491512,"emails":["2@2.com"],"folderId":"0","locationType":"LOCATION","schemaTypes":[]}]}}'
     http_version: 
-  recorded_at: Fri, 26 Jan 2018 16:30:48 GMT
+  recorded_at: Fri, 16 Feb 2018 18:27:36 GMT
 recorded_with: VCR 4.0.0
