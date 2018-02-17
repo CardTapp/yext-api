@@ -1,0 +1,119 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.yext.com/v2/accounts/my-test-account-id-2/locations/my-test-location-id-3?api_key=fake_api_key&v=20161012
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Sat, 17 Feb 2018 01:21:47 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '170'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '5000'
+      rate-limit-remaining:
+      - '4992'
+      rate-limit-reset:
+      - '1518832800'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"5750c036-161e-4d2c-a809-787718a540a8","errors":[{"code":2238,"type":"FATAL_ERROR","message":"Location
+        not found: my-test-location-id-3"}]},"response":{}}'
+    http_version: 
+  recorded_at: Sat, 17 Feb 2018 01:21:47 GMT
+- request:
+    method: post
+    uri: https://sandbox.yext.com/v2/accounts/my-test-account-id-2/locations?api_key=fake_api_key&v=20161012
+    body:
+      encoding: UTF-8
+      string: '{"accountId":"my-test-account-id-2","locationType":"LOCATION","locationName":"RSpec
+        Test Location 2","address":"1164 Morning Glory Circle","suppressAddress":false,"city":"Krakow","state":"MI","zip":"90210","phone":"312-555-1212","categoryIds":["1146752"],"featuredMessage":"2
+        locations to serve you better!","featuredMessageUrl":"https://www.cardtapp.com/buy","websiteUrl":"https://www.cardtapp.com","description":"My
+        cool RSpec location addition","emails":["2@2.com"],"id":"my-test-location-id-3"}'
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Sat, 17 Feb 2018 01:21:47 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '110'
+      connection:
+      - keep-alive
+      location:
+      - https://api.yext.com/v2/customers/my-test-account-id-2/locations/my-test-location-id-3
+      rate-limit-limit:
+      - '5000'
+      rate-limit-remaining:
+      - '4991'
+      rate-limit-reset:
+      - '1518832800'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"160ac303-3daa-443e-93ff-623451b7374a","errors":[]},"response":{"id":"my-test-location-id-3"}}'
+    http_version: 
+  recorded_at: Sat, 17 Feb 2018 01:21:48 GMT
+- request:
+    method: get
+    uri: https://sandbox.yext.com/v2/accounts/my-test-account-id-2/locations/my-test-location-id-3?api_key=fake_api_key&v=20161012
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Sat, 17 Feb 2018 01:21:48 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '706'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '5000'
+      rate-limit-remaining:
+      - '4990'
+      rate-limit-reset:
+      - '1518832800'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"4eb2ed72-e9e7-4680-9af5-7644ad29da30","errors":[]},"response":{"id":"my-test-location-id-3","uid":"pnj58","timestamp":1518830507881,"accountId":"my-test-account-id-2","locationName":"RSpec
+        Test Location 2","address":"1020 Palm Drive","city":"Krakow","state":"MI","zip":"90210","countryCode":"US","language":"en","suppressAddress":false,"phone":"3125551212","isPhoneTracked":false,"categoryIds":["1146752"],"featuredMessage":"2
+        locations to serve you better!","featuredMessageUrl":"https://www.cardtapp.com/buy","websiteUrl":"https://www.cardtapp.com","description":"My
+        cool RSpec location addition","emails":["2@2.com"],"folderId":"0","locationType":"LOCATION","schemaTypes":[]}}'
+    http_version: 
+  recorded_at: Sat, 17 Feb 2018 01:21:49 GMT
+recorded_with: VCR 4.0.0

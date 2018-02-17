@@ -47,6 +47,19 @@ module Yext
 
         include Yext::Api::Concerns::AccountChild
 
+        # rubocop:disable Naming/MethodName
+
+        # helper function to extract the affected location ID based on the locationMode
+        def locationId
+          if locationMode == Yext::Api::Enumerations::AddRequestLocationMode::NEW
+            newLocationId
+          else
+            existingLocationId
+          end
+        end
+
+        # rubocop:enable Naming/MethodName
+
         # This is a helper method to try to simplify changing the status of an AddRequest if you
         # don't have an AddRequest object.
         #
@@ -89,6 +102,8 @@ module Yext
               post
         end)
 
+        # After successfully creating a new add request, the object attributes will be updated/
+        # changed to the values of the created add request.
         def save
           if persisted?
             change_status
@@ -104,6 +119,12 @@ module Yext
               with(Yext::Api::Concerns::AccountChild.with_account_path("newlocationaddrequests")).
               where(attributes.reverse_merge(account_id: Yext::Api.configuration.param_account_id)).
               post
+
+          if Yext::Api::AdministrativeApi.last_status.between?(200, 299)
+            self.attributes = Yext::Api::AdministrativeApi.last_data.dup
+          else
+            self
+          end
         end
 
         def change_status

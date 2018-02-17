@@ -36,6 +36,26 @@ module Yext
 
           # LiveApi
           has_many :live_locations, class_name: "Yext::Api::LiveApi::Location"
+
+          after_save :save_account_id
+        end
+
+        # rubocop:disable Naming/MethodName
+
+        # Yext field names don't match the Ruby naming standard, this is the field name they use.
+        # Because I use `account_id` in the route, I need that attribute defined.  Because
+        # Yext uses accountId, when it is set, I need to set `account_id` so they will match.
+        def accountId=(value)
+          super
+          attributes[:account_id] ||= value
+        end
+
+        # rubocop:enable Naming/MethodName
+
+        private
+
+        def save_account_id
+          attributes[:account_id] = accountId
         end
 
         class_methods do

@@ -29,6 +29,7 @@ module Yext
               next if account_class.association?(klass)
 
               klass_uri = klass.instance_variable_get(:@uri)
+
               klass_uri ||= klass.send(:default_uri)
               helper_warnings(account_class, klass, klass_uri)
 
@@ -79,6 +80,8 @@ module Yext
           end)
 
           Yext::Api::Concerns::AccountChild.ensure_relation(self)
+
+          after_save :save_account_id
         end
 
         class_methods do
@@ -110,10 +113,30 @@ module Yext
 
             args[:account_id] ||= Yext::Api.configuration.param_account_id
 
+            # account_scope means that the scope will be applied to an Account rather than a
+            # relation off of an Account.
             args[:id] = args.delete(:account_id) if account_scope
 
             args
           end
+        end
+
+        # rubocop:disable Naming/MethodName
+
+        # Yext field names don't match the Ruby naming standard, this is the field name they use.
+        # Because I use `account_id` in the route, I need that attribute defined.  Because
+        # Yext uses accountId, when it is set, I need to set `account_id` so they will match.
+        def accountId=(value)
+          super
+          attributes[:account_id] = value
+        end
+
+        # rubocop:enable Naming/MethodName
+
+        private
+
+        def save_account_id
+          attributes[:account_id] = attributes[:accountId] if attributes.key?(:accountId)
         end
       end
     end

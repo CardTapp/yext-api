@@ -65,10 +65,45 @@ RSpec.describe Yext::Api::AdministrativeApi::AddRequest, :vcr do
       account.save
 
       expect(Yext::Api::AdministrativeApi.last_status).to eq 200
+
+      expect(account.id).to be
+      expect(account.locationId).to eq "my-test-location-id-1"
+    end
+
+    it "doesn't change on failure" do
+      account = Yext::Api::AdministrativeApi::AddRequest.new
+
+      account.newLocationId          = "my-test-location-id-1"
+      account.newLocationAccountId   = "my-test-account-id-1"
+      account.newLocationAccountName = "RSpec Test Account 1"
+      account.skus                   = ["DEV-00010000"]
+      account.forceReview            = true
+      account.newLocationData        = { id:                 "my-test-location-id-1",
+                                         locationType:       "LOCATION",
+                                         locationName:       "RSpec Test Location 1",
+                                         address:            "1313 Mockingbird Ln.",
+                                         address2:           "Suite 100",
+                                         suppressAddress:    true,
+                                         city:               "Anchorage",
+                                         state:              "AK",
+                                         zip:                "90210",
+                                         phone:              "425-555-1212",
+                                         categoryIds:        ["1146752"],
+                                         featuredMessage:    "This is so cool!",
+                                         featuredMessageUrl: "https://www.cardtapp.com/buy",
+                                         websiteUrl:         "https://www.cardtapp.com",
+                                         description:        "My cool RSpec location",
+                                         emails:             ["1@1.com"] }
+
+      account.save
+
+      expect(Yext::Api::AdministrativeApi.last_status).not_to eq 200
+
+      expect(account.id).not_to be
     end
 
     it "creates a new account using create" do
-      Yext::Api::AdministrativeApi::AddRequest.
+      account = Yext::Api::AdministrativeApi::AddRequest.
           create(newLocationId:          "my-test-location-id-2",
                  newLocationAccountId:   "my-test-account-id-2",
                  newLocationAccountName: "RSpec Test Account 2",
@@ -92,6 +127,9 @@ RSpec.describe Yext::Api::AdministrativeApi::AddRequest, :vcr do
                                            emails:             ["2@2.com"] })
 
       expect(Yext::Api::AdministrativeApi.last_status).to eq 200
+
+      expect(account.id).to be
+      expect(account.locationId).to eq "my-test-location-id-2"
     end
   end
 
@@ -146,6 +184,24 @@ RSpec.describe Yext::Api::AdministrativeApi::AddRequest, :vcr do
       location = Yext::Api::KnowledgeApi::KnowledgeManager::Location.account("my-test-account-id-2").find("my-test-location-id-2")
 
       location.add_services! skus: ["DEV-00010000"]
+    end
+  end
+
+  describe "locationId" do
+    it "returns a new location ID" do
+      add_request = Yext::Api::AdministrativeApi::AddRequest.new(id:            "fake",
+                                                                 newLocationId: "new-id",
+                                                                 locationMode:  Yext::Api::Enumerations::AddRequestLocationMode::NEW)
+
+      expect(add_request.locationId).to eq "new-id"
+    end
+
+    it "returns an existing location ID" do
+      add_request = Yext::Api::AdministrativeApi::AddRequest.new(id:                 "fake",
+                                                                 existingLocationId: "existing-id",
+                                                                 locationMode:       Yext::Api::Enumerations::AddRequestLocationMode::EXISTING)
+
+      expect(add_request.locationId).to eq "existing-id"
     end
   end
 end
