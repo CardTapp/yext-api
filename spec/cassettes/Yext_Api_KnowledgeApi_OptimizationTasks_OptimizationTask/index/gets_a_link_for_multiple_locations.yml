@@ -1,0 +1,39 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.yext.com/v2/accounts/my-test-account-id-2/optimizationtasks?api_key=fake_api_key&locationIds=my-test-location-id-2%2Cmy-test-location-id-3&v=20161012
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Fri, 16 Feb 2018 18:11:40 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '170'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '5000'
+      rate-limit-remaining:
+      - '4998'
+      rate-limit-reset:
+      - '1518807600'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"67fc69c8-6a7d-46e5-b8af-d6d28a88b52d","errors":[{"code":2000,"type":"FATAL_ERROR","message":"Location
+        not found: my-test-location-id-3"}]},"response":{}}'
+    http_version: 
+  recorded_at: Fri, 16 Feb 2018 18:11:40 GMT
+recorded_with: VCR 4.0.0

@@ -26,6 +26,14 @@ module Yext
           has_many :users, class_name: "Yext::Api::KnowledgeApi::AccountSettings::User"
           has_many :roles, class_name: "Yext::Api::KnowledgeApi::AccountSettings::Role"
 
+          # KnowledgeApi::OptimizationTasks
+          has_many :optimization_tasks,
+                   class_name: "Yext::Api::KnowledgeApi::OptimizationTasks::OptimizationTask",
+                   uri:        Yext::Api::Concerns::AccountChild.with_account_path("optimizationtasks/(:id)")
+          has_many :optimization_links,
+                   class_name: "Yext::Api::KnowledgeApi::OptimizationTasks::OptimizationLink",
+                   uri:        Yext::Api::Concerns::AccountChild.with_account_path("optimizationlink")
+
           # LiveApi
           has_many :live_locations, class_name: "Yext::Api::LiveApi::Location"
         end

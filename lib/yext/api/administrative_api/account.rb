@@ -37,7 +37,7 @@ module Yext
         # Furthermore, the account_id cannot be changed by the partner, but only by the customer
         # themselves.
         def save
-          return unless accountId?
+          return unless Yext::Api::Validators::AccountValidator.new(self).valid?
 
           updates             = { account_id: account_id, accountName: accountName }
           updates[:accountId] = accountId if accountId != account_id

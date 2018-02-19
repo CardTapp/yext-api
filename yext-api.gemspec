@@ -33,6 +33,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "memoist", "~> 0"
   spec.add_dependency "rails", "> 4"
   spec.add_dependency "spyke", "~> 5"
+  spec.add_dependency "valid", "~> 1"
 
   spec.add_development_dependency "bundler"
   spec.add_development_dependency "codecov"
