@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.yext.com/v2/accounts/fake_account_id/newlocationaddrequests?api_key=fake_api_key&v=20161012
+    body:
+      encoding: UTF-8
+      string: '{"newLocationId":"my-test-location-id-1","newLocationAccountId":"my-test-account-id-1","newLocationAccountName":"RSpec
+        Test Account 1","skus":["DEV-00010000"],"forceReview":true,"newLocationData":{"id":"my-test-location-id-1","locationType":"LOCATION","locationName":"RSpec
+        Test Location 1","address":"1313 Mockingbird Ln.","address2":"Suite 100","suppressAddress":true,"city":"Anchorage","state":"AK","zip":"90210","phone":"425-555-1212","categoryIds":["1146752"],"featuredMessage":"This
+        is so cool!","featuredMessageUrl":"https://www.cardtapp.com/buy","websiteUrl":"https://www.cardtapp.com","description":"My
+        cool RSpec location","emails":["1@1.com"]}}'
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Wed, 21 Feb 2018 00:31:06 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '189'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '1000'
+      rate-limit-remaining:
+      - '999'
+      rate-limit-reset:
+      - '1519174800'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"a58dd1c7-72bd-42e4-8729-db44187b29c4","errors":[{"code":1308,"type":"FATAL_ERROR","message":"There
+        is a conflicting add request with the same external ID"}]},"response":{}}'
+    http_version: 
+  recorded_at: Wed, 21 Feb 2018 00:31:06 GMT
+recorded_with: VCR 4.0.0

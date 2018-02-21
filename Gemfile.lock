@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    yext-api (0.1.5)
+    yext-api (0.1.7)
       memoist (~> 0)
       rails (> 4)
       spyke (~> 5)

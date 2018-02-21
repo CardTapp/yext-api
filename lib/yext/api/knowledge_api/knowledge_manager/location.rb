@@ -46,6 +46,30 @@ module Yext
         class Location < Yext::Api::Utils::ApiBase
           include Yext::Api::Concerns::AccountChild
 
+          scope(:search, lambda do |*filters|
+            args           = scope_args true
+            args[:filters] = Array.wrap(filters).to_json
+
+            Yext::Api::AdministrativeApi::Account.
+                where(args).
+                with(:locationsearch).
+                get
+          end)
+
+          def save(*fields_to_update)
+            return super if fields_to_update.blank?
+
+            # To save only certain fields, slice those fields into a new Location so that everything
+            # is sent (which is only the fields we want)
+            location = Yext::Api::KnowledgeApi::KnowledgeManager::Location.
+                new(attributes.with_indifferent_access.slice(*fields_to_update))
+
+            location.id        = id
+            location.accountId = accountId
+
+            location.save
+          end
+
           # http://developer.yext.com/docs/administrative-api/#operation/createExistingLocationAddRequest
           def add_services!(skus:, agreement_id: nil, force_review: false)
             args               = { existingAccountId: account_id, existingLocationId: id }

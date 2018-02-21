@@ -30,8 +30,6 @@ module Yext
       class Account < Yext::Api::Utils::ApiBase
         include Yext::Api::Concerns::AccountRelations
 
-        after_save :save_account_id
-
         # The save action only allows the saving of the account_id and the accountName
         #
         # Furthermore, the account_id cannot be changed by the partner, but only by the customer
@@ -47,24 +45,6 @@ module Yext
               put
 
           save_account_id
-        end
-
-        # rubocop:disable Naming/MethodName
-
-        # Yext field names don't match the Ruby naming standard, this is the field name they use.
-        # Because I use `account_id` in the route, I need that attribute defined.  Because
-        # Yext uses accountId, when it is set, I need to set `account_id` so they will match.
-        def accountId=(value)
-          super
-          attributes[:account_id] ||= value
-        end
-
-        # rubocop:enable Naming/MethodName
-
-        private
-
-        def save_account_id
-          attributes[:account_id] = accountId
         end
       end
     end

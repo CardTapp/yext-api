@@ -8,37 +8,18 @@ RSpec.describe Yext::Api::Agreements::AddRequestController, type: :controller do
 
   routes { Yext::Api::Engine.routes }
 
-  class AddRequestControllerTestProcessor
-    attr_reader :meta,
-                :object,
-                :localization
-
-    def initialize(meta, object, localizations)
-      @meta          = meta
-      @object        = object
-      @localizations = localizations
-    end
-
-    def add_request_changed
-      puts "add_request_changed called"
-    end
-  end
-
-  around(:each) do |example_proxy|
-    configuration = Yext::Api.configuration
-
-    orig_callback_processor = configuration.get_callback_processor(:add_request_changed)
-
-    begin
-      configuration.set_callback_processor(:add_request_changed, AddRequestControllerTestProcessor)
-
-      example_proxy.run
-    ensure
-      configuration.set_callback_processor(:add_request_changed, orig_callback_processor)
+  class AddRequestChanged
+    def self.call(name, started, finished, unique_id, data)
+      params_hash = { name: name, started: started, finished: finished, unique_id: unique_id, data: data }
+      Rails.logger.error "add_request_changed called: #{params_hash}"
     end
   end
 
   describe "create" do
+    before(:context) do
+      ActiveSupport::Notifications.subscribe "add_request.changed.yext", AddRequestChanged
+    end
+
     it "returns success" do
       post :create, params: params
 
@@ -46,34 +27,8 @@ RSpec.describe Yext::Api::Agreements::AddRequestController, type: :controller do
       expect(response.body).to be_blank
     end
 
-    it "converts times" do
-      processor = nil
-      allow(AddRequestControllerTestProcessor).to receive(:new).and_wrap_original do |orig_function, *args|
-        processor = orig_function.call(*args)
-      end
-
-      post :create, params: params
-
-      expect(processor.meta[:timestamp]).to be_a(Time)
-      expect(processor.object.dateSubmitted).to be_a(Time)
-      expect(processor.object.dateCompleted).to be_a(Time)
-    end
-
-    it "calls the add_request_changed function" do
-      processor = AddRequestControllerTestProcessor.new(params[:meta],
-                                                        Yext::Api::AdministrativeApi::AddRequest.new(params[:addRequest]),
-                                                        nil)
-      allow(AddRequestControllerTestProcessor).to receive(:new).and_return processor
-
-      expect(processor).to receive(:add_request_changed)
-
-      post :create, params: params
-    end
-
-    it "does not call add_request_changed if nothing is configured" do
-      Yext::Api.configuration.set_callback_processor(:add_request_changed, nil)
-
-      expect(AddRequestControllerTestProcessor).not_to receive(:new)
+    it "instruments a notification" do
+      expect(Rails.logger).to receive(:error).with(/add_request_changed called: /)
 
       post :create, params: params
     end

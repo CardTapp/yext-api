@@ -1,0 +1,41 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.yext.com/v2/accounts/my-test-account-id-2/locations/my-test-location-id-2?api_key=fake_api_key&v=20161012
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Sat, 17 Feb 2018 04:04:56 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '812'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '5000'
+      rate-limit-remaining:
+      - '4998'
+      rate-limit-reset:
+      - '1518843600'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"3f379e74-fd2f-4080-8a78-a8e439844f5d","errors":[]},"response":{"id":"my-test-location-id-2","uid":"EZZJa","timestamp":1518839265316,"accountId":"my-test-account-id-2","locationName":"RSpec
+        Test Location 1","address":"1020 Palm Drive","address2":"Suite 200","city":"Boston","state":"AL","zip":"90410","countryCode":"US","language":"en","suppressAddress":true,"phone":"4255551211","isPhoneTracked":false,"categoryIds":["1146752"],"featuredMessage":"This
+        is so cool too!","featuredMessageUrl":"https://www.cardtapp.com/buy","websiteUrl":"https://www.cardtapp.com","description":"My
+        cool RSpec location","yextDisplayLat":40.3377832,"yextDisplayLng":-79.8261419,"yextRoutableLat":34.010932,"yextRoutableLng":-118.491512,"emails":["2@2.com"],"folderId":"0","locationType":"LOCATION","schemaTypes":[]}}'
+    http_version: 
+  recorded_at: Sat, 17 Feb 2018 04:04:56 GMT
+recorded_with: VCR 4.0.0

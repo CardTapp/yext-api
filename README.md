@@ -91,6 +91,35 @@ The global configurations can be initialized with ENV values.  The following con
   Wether or not to use the Sandbox API endpoint or the API endpoint.  This option cannot be set on a
   per-call basis.  This option is ignored for all objects under the `LiveApi` namespace.
 
+### Events
+
+Webhooks are implimented as ActiveSupport::Notifications.
+
+You can hook into notifications in multiple ways:
+
+```ruby
+# with a class:
+class AddRequestChanged
+  def call(name, started, finished, unique_id, data)
+    params_hash = { name: name, started: started, finished: finished, unique_id: unique_id, data: data }
+    Rails.logger.error "add_request_changed called: #{params_hash}"
+  end
+end
+
+ActiveSupport::Notifications.subscribe "add_request.changed.yext", AddRequestChanged.new
+
+# with a block:
+ActiveSupport::Notifications.subscribe "add_request.changed.yext" do |name, started, finished, unique_id, data|
+end
+```
+
+The following notifications will be
+instrumented with the indicated parameters:
+
+* add_request.changed.yext
+    * **meta** - The meta information for the webhook
+    * **add_request** - A Yext::Api::AdministrativeApi::AddRequest object of the changed AddRequest.
+
 ### General Usage
 
 The API namespaces are setup to mimic the structure of the Yext API documentation to make it easier
@@ -141,6 +170,7 @@ The following classes are planned based on that structure:
 * KnowledgeApi::AccountSettings::User
 * KnowledgeApi::AccountSettings::Account
 * KnowledgeApi::OptimizationTasks::OptimizationTask
+* KnowledgeApi::OptimizationTasks::OptimizationLink
 * LiveApi::Menu
 * LiveApi::Bio
 * LiveApi::Product
@@ -162,10 +192,16 @@ end
 
 #### Fetching a single object
 
-Use `find`
+Use `find` if you want to raise an exception if it cannot be found
 
 ```ruby
 account = Yext::Api::AdministrativeApi::Account.find("my-id")
+```
+
+Use `where(id: id).get` if you do not want an exception to be raised:
+
+```ruby
+account = Yext::Api::AdministrativeApi::Account.where(id: "my-id").get
 ```
 
 #### Overriding configuration options

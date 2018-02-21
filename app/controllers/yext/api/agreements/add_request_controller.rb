@@ -19,59 +19,44 @@ module Yext
         extend Memoist
 
         def create
-          process_add_request_changed
+          add_request = Yext::Api::AdministrativeApi::AddRequest.new(add_request_hash[:addRequest])
+
+          ActiveSupport::Notifications.instrument "add_request.changed.yext",
+                                                  meta:        add_request_hash[:meta],
+                                                  add_request: add_request do
+            # do your custom stuff here
+          end
 
           head :ok
         end
 
         private
 
-        def process_add_request_changed
-          processor = Yext::Api.configuration.get_callback_processor(:add_request_changed)
-
-          return if processor.blank?
-
-          processor.new(processor_args[:meta],
-                        Yext::Api::AdministrativeApi::AddRequest.new(processor_args[:addRequest]),
-                        nil).
-              add_request_changed
-        end
-
-        def processor_args
-          params_hash.convert_epoch :meta, :timestamp
-          params_hash.convert_time :addRequest, :dateSubmitted
-          params_hash.convert_time :addRequest, :dateCompleted
-
-          params_hash.params
-        end
-
         # rubocop:disable MethodLength
 
-        def params_hash
-          Yext::Api::Utils::Params.
-              new(params.
-                  permit(meta:       %i[eventType uuid timestamp accountId actor appSpecificAccountId],
-                         addRequest: [:id,
-                                      :locationMode,
-                                      :existingLocationId,
-                                      :newLocationId,
-                                      :newLocationAccountId,
-                                      :newAccountParentAccountId,
-                                      :newLocationData,
-                                      { skus: [] },
-                                      :agreementId,
-                                      :status,
-                                      :dateSubmitted,
-                                      :dateCompleted,
-                                      :statusDetail]).
-                  to_hash.
-                  with_indifferent_access)
+        def add_request_hash
+          params.
+              permit(meta:       %i[eventType uuid timestamp accountId actor appSpecificAccountId],
+                     addRequest: [:id,
+                                  :locationMode,
+                                  :existingLocationId,
+                                  :newLocationId,
+                                  :newLocationAccountId,
+                                  :newAccountParentAccountId,
+                                  :newLocationData,
+                                  { skus: [] },
+                                  :agreementId,
+                                  :status,
+                                  :dateSubmitted,
+                                  :dateCompleted,
+                                  :statusDetail]).
+              to_hash.
+              with_indifferent_access
         end
 
         # rubocop:enable MethodLength
 
-        memoize :processor_args,
-                :params_hash
+        memoize :add_request_hash
       end
     end
   end

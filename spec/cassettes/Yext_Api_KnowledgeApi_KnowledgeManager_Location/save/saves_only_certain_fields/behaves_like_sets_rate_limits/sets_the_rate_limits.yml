@@ -1,0 +1,154 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.yext.com/v2/accounts/my-test-account-id-2/locations/my-test-location-id-2?api_key=fake_api_key&v=20161012
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Sat, 17 Feb 2018 01:08:22 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '827'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '5000'
+      rate-limit-remaining:
+      - '4997'
+      rate-limit-reset:
+      - '1518832800'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"b8034cdf-5a86-4e9c-9042-c173a1ed9360","errors":[]},"response":{"id":"my-test-location-id-2","uid":"EZZJa","timestamp":1518829641125,"accountId":"my-test-account-id-2","locationName":"RSpec
+        Test Location 1","address":"2756 Morning glory Cir.","address2":"Suite 200","city":"Boston","state":"AL","zip":"90410","countryCode":"US","language":"en","suppressAddress":true,"phone":"4255551211","isPhoneTracked":false,"categoryIds":["1146752"],"featuredMessage":"This
+        is so cool too!","featuredMessageUrl":"https://www.cardtapp.com/buy","websiteUrl":"https://www.cardtapp.com","description":"My
+        cool RSpec location","yextDisplayLat":29.6708315,"yextDisplayLng":-95.15773689999999,"yextRoutableLat":34.010932,"yextRoutableLng":-118.491512,"emails":["2@2.com"],"folderId":"0","locationType":"LOCATION","schemaTypes":[]}}'
+    http_version: 
+  recorded_at: Sat, 17 Feb 2018 01:08:22 GMT
+- request:
+    method: put
+    uri: https://sandbox.yext.com/v2/accounts/my-test-account-id-2/locations/my-test-location-id-2?api_key=fake_api_key&v=20161012
+    body:
+      encoding: UTF-8
+      string: '{"locationName":"RSpec Test Changed Location 1","accountId":"my-test-account-id-2","id":"my-test-location-id-2"}'
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Sat, 17 Feb 2018 01:08:23 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '110'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '5000'
+      rate-limit-remaining:
+      - '4996'
+      rate-limit-reset:
+      - '1518832800'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"f5f3b772-bfb2-4eec-a66f-619342d784d0","errors":[]},"response":{"id":"my-test-location-id-2"}}'
+    http_version: 
+  recorded_at: Sat, 17 Feb 2018 01:08:23 GMT
+- request:
+    method: get
+    uri: https://sandbox.yext.com/v2/accounts/my-test-account-id-2/locations/my-test-location-id-2?api_key=fake_api_key&v=20161012
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Sat, 17 Feb 2018 01:08:23 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '835'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '5000'
+      rate-limit-remaining:
+      - '4995'
+      rate-limit-reset:
+      - '1518832800'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"552dd961-812e-4828-a2b6-4008212e0352","errors":[]},"response":{"id":"my-test-location-id-2","uid":"EZZJa","timestamp":1518829703166,"accountId":"my-test-account-id-2","locationName":"RSpec
+        Test Changed Location 1","address":"2756 Morning glory Cir.","address2":"Suite
+        200","city":"Boston","state":"AL","zip":"90410","countryCode":"US","language":"en","suppressAddress":true,"phone":"4255551211","isPhoneTracked":false,"categoryIds":["1146752"],"featuredMessage":"This
+        is so cool too!","featuredMessageUrl":"https://www.cardtapp.com/buy","websiteUrl":"https://www.cardtapp.com","description":"My
+        cool RSpec location","yextDisplayLat":29.6708315,"yextDisplayLng":-95.15773689999999,"yextRoutableLat":34.010932,"yextRoutableLng":-118.491512,"emails":["2@2.com"],"folderId":"0","locationType":"LOCATION","schemaTypes":[]}}'
+    http_version: 
+  recorded_at: Sat, 17 Feb 2018 01:08:24 GMT
+- request:
+    method: put
+    uri: https://sandbox.yext.com/v2/accounts/my-test-account-id-2/locations/my-test-location-id-2?api_key=fake_api_key&v=20161012
+    body:
+      encoding: UTF-8
+      string: '{"locationName":"RSpec Test Location 1","accountId":"my-test-account-id-2","id":"my-test-location-id-2"}'
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Sat, 17 Feb 2018 01:08:24 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '110'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '5000'
+      rate-limit-remaining:
+      - '4994'
+      rate-limit-reset:
+      - '1518832800'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"9e688759-f087-4edf-a6c4-106200a2f1d3","errors":[]},"response":{"id":"my-test-location-id-2"}}'
+    http_version: 
+  recorded_at: Sat, 17 Feb 2018 01:08:24 GMT
+recorded_with: VCR 4.0.0

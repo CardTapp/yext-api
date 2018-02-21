@@ -1,0 +1,41 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.yext.com/v2/accounts/my-test-account-id-2/locationsearch?api_key=fake_api_key&filters=%5B%7B%22address%22%3A%7B%22contains%22%3A%5B%22Morning+Glory%22%5D%7D%7D%5D&v=20161012
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Mon, 19 Feb 2018 20:05:55 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '846'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '5000'
+      rate-limit-remaining:
+      - '4998'
+      rate-limit-reset:
+      - '1519074000'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"4b4cc199-1907-40e9-a8c8-34c8726ded43","errors":[]},"response":{"count":1,"locations":[{"id":"my-test-location-id-3","uid":"pnj58","timestamp":1518830508873,"accountId":"my-test-account-id-2","locationName":"RSpec
+        Test Location 2","address":"1164 Morning Glory Circle","city":"Krakow","state":"MI","zip":"90210","countryCode":"US","language":"en","suppressAddress":false,"phone":"3125551212","isPhoneTracked":false,"categoryIds":["1146752"],"featuredMessage":"2
+        locations to serve you better!","featuredMessageUrl":"https://www.cardtapp.com/buy","websiteUrl":"https://www.cardtapp.com","description":"My
+        cool RSpec location addition","yextDisplayLat":34.097449,"yextDisplayLng":-118.412061,"yextRoutableLat":34.097449,"yextRoutableLng":-118.412061,"emails":["2@2.com"],"folderId":"0","locationType":"LOCATION","schemaTypes":[]}]}}'
+    http_version: 
+  recorded_at: Mon, 19 Feb 2018 20:05:55 GMT
+recorded_with: VCR 4.0.0
