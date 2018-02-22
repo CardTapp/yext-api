@@ -420,7 +420,7 @@
             :documentation: http://developer.yext.com/docs/api-reference/#operation/deleteAsset
             :sandbox_only: false
   :power_listings:
-    :module_name: PowerListings
+    :module_name: Powerlistings
     :objects:
       :publishser:
         :actions:

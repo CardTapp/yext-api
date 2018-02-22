@@ -1,0 +1,40 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://sandbox.yext.com/v2/accounts/my-test-account-id-2/powerlistings/listings/optout?api_key=fake_api_key&v=20161012
+    body:
+      encoding: UTF-8
+      string: '{"publisherIds":["NOKIA"]}'
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Thu, 22 Feb 2018 02:28:16 GMT
+      content-type:
+      - application/json; charset=utf-8
+      content-length:
+      - '82'
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '5000'
+      rate-limit-remaining:
+      - '4982'
+      rate-limit-reset:
+      - '1519268400'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"4c1f42d4-506a-47ac-a5a9-a4d46112664e","errors":[]},"response":{}}'
+    http_version: 
+  recorded_at: Thu, 22 Feb 2018 02:28:16 GMT
+recorded_with: VCR 4.0.0

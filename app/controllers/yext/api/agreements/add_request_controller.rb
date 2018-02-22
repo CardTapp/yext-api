@@ -5,8 +5,11 @@ module Yext
     module Agreements
       # This controller processes Yext add_request webhook callbacks.
       #
-      # The controller will call the add_request_changed function on the configured class
-      # for the add_request_changed function.
+      # The controller will instrument the "add_request.knowledge_manager.yext" ActiveSupport Notification.
+      # The params hash will include:
+      #   * meta        - the `meta` value of the webhook.
+      #   * add_request - a Yext::Api::AdministrativeApi::AddRequest object that is the AddRequest
+      #                   being reported on.
 
       # :webhooks:
       #   :agreements:
@@ -21,7 +24,7 @@ module Yext
         def create
           add_request = Yext::Api::AdministrativeApi::AddRequest.new(add_request_hash[:addRequest])
 
-          ActiveSupport::Notifications.instrument "add_request.changed.yext",
+          ActiveSupport::Notifications.instrument "add_request.knowledge_manager.yext",
                                                   meta:        add_request_hash[:meta],
                                                   add_request: add_request do
             # do your custom stuff here

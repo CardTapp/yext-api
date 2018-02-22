@@ -1,0 +1,27 @@
+{
+  "listing": {
+    "id": "13579",
+    "locationId": "locId123",
+    "publisherId": "MAPQUEST",
+    "status": "LIVE",
+    "additionalStatus": "CONNECTED",
+    "listingUrl": "http://listings.com/13579",
+    "loginUrl": "http://listings.com/login",
+    "screenshotUrl": "http://listings.com/13579.png",
+    "statusDetails": [
+      {
+        "code": "222",
+        "message": "reasonhtml",
+        "type": "UNAVAILABLE_REASON"
+      }
+    ]
+  },
+  "meta": {
+    "uuid": "bb0c7e19-4dc3-4891-bfa5-8593b1f124ad",
+    "timestamp": 1461191143000,
+    "accountId": "12345",
+    "appSpecificAccountId": "1533db23c7ec912fd622a2bf6281285ef1a18867",
+    "eventType": "LISTING_UPDATED",
+    "actor": "App 123 - 'Hello World App'"
+  }
+}

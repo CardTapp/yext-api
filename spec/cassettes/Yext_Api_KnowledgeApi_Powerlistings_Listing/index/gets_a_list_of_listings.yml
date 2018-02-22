@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.yext.com/v2/accounts/my-test-account-id-2/powerlistings/listings?api_key=fake_api_key&v=20161012
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx/1.10.2
+      date:
+      - Thu, 22 Feb 2018 02:27:59 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      rate-limit-limit:
+      - '5000'
+      rate-limit-remaining:
+      - '4984'
+      rate-limit-reset:
+      - '1519268400'
+    body:
+      encoding: UTF-8
+      string: '{"meta":{"uuid":"7d42e50b-cef9-4b65-a076-b3b58664be62","errors":[]},"response":{"count":32,"listings":[{"locationId":"my-test-location-id-2","publisherId":"AVANTAR","status":"WAITING_ON_YEXT"},{"locationId":"my-test-location-id-2","publisherId":"BING","status":"WAITING_ON_YEXT"},{"locationId":"my-test-location-id-2","publisherId":"","status":"WAITING_ON_YEXT"},{"locationId":"my-test-location-id-2","publisherId":"","status":"WAITING_ON_YEXT"},{"locationId":"my-test-location-id-2","publisherId":"SUPERPAGES","status":"WAITING_ON_YEXT"},{"locationId":"my-test-location-id-2","publisherId":"","status":"WAITING_ON_YEXT"},{"locationId":"my-test-location-id-2","publisherId":"FACEBOOK","status":"WAITING_ON_YEXT"},{"locationId":"my-test-location-id-2","publisherId":"FACTUAL","status":"UNAVAILABLE","statusDetails":[{"code":"17","message":"We
+        were unable to locate your address and place it on the map.  Please provide
+        an alternative address or contact support for additional assistance.","type":"UNAVAILABLE_REASON"},{"code":"41","message":"You
+        have requested that the address for this location be hidden.  However, this
+        site does not support hidden addresses. As such, we are not publishing your
+        {1} for this site.","type":"UNAVAILABLE_REASON"}]},{"locationId":"my-test-location-id-2","publisherId":"FOURSQUARE","status":"WAITING_ON_YEXT"},{"locationId":"my-test-location-id-2","publisherId":"","status":"WAITING_ON_YEXT"},{"locationId":"my-test-location-id-2","publisherId":"GOLOCAL247","status":"WAITING_ON_YEXT"},{"locationId":"my-test-location-id-2","publisherId":"GOOGLEMYBUSINESS","status":"WAITING_ON_YEXT"},{"locationId":"my-test-location-id-2","publisherId":"NOKIA","status":"UNAVAILABLE","statusDetails":[{"code":"17","message":"We
+        were unable to locate your address and place it on the map.  Please provide
+        an alternative address or contact support for additional assistance.","type":"UNAVAILABLE_REASON"},{"code":"41","message":"You
+        have requested that the address for this location be hidden.  However, this
+        site does not support hidden addresses. As such, we are not publishing your
+        {1} for this site.","type":"UNAVAILABLE_REASON"},{"code":"14","message":"Your
+        business is not currently categorized for this partner.  Please add additional
+        categories or contact support for help.  If you have recently added categories,
+        please allow 24 hours for this message to reset.","type":"UNAVAILABLE_REASON"}]},{"locationId":"my-test-location-id-2","publisherId":"IBEGIN","status":"WAITING_ON_YEXT"},{"locationId":"my-test-location-id-2","publisherId":"","status":"WAITING_ON_YEXT"},{"locationId":"my-test-location-id-2","publisherId":"LOCALPAGES","status":"WAITING_ON_YEXT"},{"locationId":"my-test-location-id-2","publisherId":"MAPQUEST","status":"WAITING_ON_YEXT"},{"locationId":"my-test-location-id-2","publisherId":"MOJOPAGES","status":"WAITING_ON_YEXT"},{"locationId":"my-test-location-id-2","publisherId":"N49CA","status":"WAITING_ON_YEXT"},{"locationId":"my-test-location-id-2","publisherId":"NAVMII","status":"WAITING_ON_YEXT"},{"locationId":"my-test-location-id-2","publisherId":"SHOWMELOCAL","status":"WAITING_ON_YEXT"},{"locationId":"my-test-location-id-2","publisherId":"SUPERPAGES","status":"WAITING_ON_YEXT"},{"locationId":"my-test-location-id-2","publisherId":"TOMTOM","status":"UNAVAILABLE","statusDetails":[{"code":"17","message":"We
+        were unable to locate your address and place it on the map.  Please provide
+        an alternative address or contact support for additional assistance.","type":"UNAVAILABLE_REASON"},{"code":"41","message":"You
+        have requested that the address for this location be hidden.  However, this
+        site does not support hidden addresses. As such, we are not publishing your
+        {1} for this site.","type":"UNAVAILABLE_REASON"}]},{"locationId":"my-test-location-id-2","publisherId":"","status":"WAITING_ON_YEXT"},{"locationId":"my-test-location-id-2","publisherId":"TUPALO","status":"WAITING_ON_YEXT"},{"locationId":"my-test-location-id-2","publisherId":"GOOGLEMYBUSINESS","status":"WAITING_ON_YEXT"},{"locationId":"my-test-location-id-2","publisherId":"WHERETO","status":"WAITING_ON_YEXT"},{"locationId":"my-test-location-id-2","publisherId":"YAHOO","status":"WAITING_ON_YEXT"},{"locationId":"my-test-location-id-2","publisherId":"YASABE","status":"WAITING_ON_YEXT"},{"locationId":"my-test-location-id-2","publisherId":"YELLOWISE","status":"WAITING_ON_YEXT"},{"locationId":"my-test-location-id-2","publisherId":"YELLOWMOXIE","status":"WAITING_ON_YEXT"},{"locationId":"my-test-location-id-2","publisherId":"YELP","status":"WAITING_ON_YEXT"}]}}'
+    http_version: 
+  recorded_at: Thu, 22 Feb 2018 02:27:59 GMT
+recorded_with: VCR 4.0.0

@@ -2,22 +2,22 @@
 
 require "rails_helper"
 
-RSpec.describe Yext::Api::Agreements::AddRequestController, type: :controller do
+RSpec.describe Yext::Api::Powerlistings::ListingController, type: :controller do
   let(:params) { JSON.parse(body, symbolize_names: true) }
-  let(:body) { File.read(Yext::Api::Engine.root.join("spec/fixtures/webhooks/agreements/add_request/completed_callback.json")) }
+  let(:body) { File.read(Yext::Api::Engine.root.join("spec/fixtures/webhooks/powerlistings/listing_sample.json")) }
 
   routes { Yext::Api::Engine.routes }
 
-  class AddRequestChanged
+  class ListingChanged
     def self.call(name, started, finished, unique_id, data)
       params_hash = { name: name, started: started, finished: finished, unique_id: unique_id, data: data }
-      Rails.logger.error "add_request_changed called: #{params_hash}"
+      Rails.logger.error "listing_changed called: #{params_hash}"
     end
   end
 
   describe "create" do
     before(:context) do
-      ActiveSupport::Notifications.subscribe "add_request.knowledge_manager.yext", AddRequestChanged
+      ActiveSupport::Notifications.subscribe "listing.powerlistings.yext", ListingChanged
     end
 
     it "returns success" do
@@ -28,7 +28,7 @@ RSpec.describe Yext::Api::Agreements::AddRequestController, type: :controller do
     end
 
     it "instruments a notification" do
-      expect(Rails.logger).to receive(:error).with(/add_request_changed called: /)
+      expect(Rails.logger).to receive(:error).with(/listing_changed called: /)
 
       post :create, params: params
     end
