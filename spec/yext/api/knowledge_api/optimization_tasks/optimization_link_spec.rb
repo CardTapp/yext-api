@@ -6,7 +6,7 @@ require "rails_helper"
 RSpec.describe Yext::Api::KnowledgeApi::OptimizationTasks::OptimizationLink, :vcr do
   it_behaves_like "default scopes"
 
-  describe "index" do
+  describe "show" do
     it_behaves_like("sets rate limits", lambda do
       Yext::Api::KnowledgeApi::OptimizationTasks::OptimizationLink.
           account("my-test-account-id-2").

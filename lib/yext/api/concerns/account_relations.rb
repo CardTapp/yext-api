@@ -34,6 +34,14 @@ module Yext
                    class_name: "Yext::Api::KnowledgeApi::OptimizationTasks::OptimizationLink",
                    uri:        Yext::Api::Concerns::AccountChild.with_account_path("optimizationlink")
 
+          # KnowledgeApi::Powerlistings
+          has_many :listings,
+                   class_name: "Yext::Api::KnowledgeApi::Powerlistings::Listing",
+                   uri:        Yext::Api::Concerns::AccountChild.with_account_path("powerlistings/listings/(:id)")
+          has_many :publishers,
+                   class_name: "Yext::Api::KnowledgeApi::Powerlistings::Publisher",
+                   uri:        Yext::Api::Concerns::AccountChild.with_account_path("powerlistings/publishers/(:id)")
+
           # LiveApi
           has_many :live_locations, class_name: "Yext::Api::LiveApi::Location"
 

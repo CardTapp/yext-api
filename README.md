@@ -100,25 +100,29 @@ You can hook into notifications in multiple ways:
 ```ruby
 # with a class:
 class AddRequestChanged
-  def call(name, started, finished, unique_id, data)
+  def self.call(name, started, finished, unique_id, data)
     params_hash = { name: name, started: started, finished: finished, unique_id: unique_id, data: data }
     Rails.logger.error "add_request_changed called: #{params_hash}"
   end
 end
 
-ActiveSupport::Notifications.subscribe "add_request.changed.yext", AddRequestChanged.new
+ActiveSupport::Notifications.subscribe "add_request.knowledge_manager.yext", AddRequestChanged
 
 # with a block:
-ActiveSupport::Notifications.subscribe "add_request.changed.yext" do |name, started, finished, unique_id, data|
+ActiveSupport::Notifications.subscribe "add_request.knowledge_manager.yext" do |name, started, finished, unique_id, data|
 end
 ```
 
 The following notifications will be
 instrumented with the indicated parameters:
 
-* add_request.changed.yext
+* add_request.knowledge_manager.yext
     * **meta** - The meta information for the webhook
     * **add_request** - A Yext::Api::AdministrativeApi::AddRequest object of the changed AddRequest.
+
+* listing.powerlistings.yext
+    * **meta** - The meta information for the webhook
+    * **listing** - A Yext::Api::KnowledgeApi::Powerlistings::Listing object of the changed Listing.
 
 ### General Usage
 
