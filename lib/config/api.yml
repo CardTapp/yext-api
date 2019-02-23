@@ -422,7 +422,7 @@
   :power_listings:
     :module_name: Powerlistings
     :objects:
-      :publishser:
+      :publisher:
         :actions:
           - :action: :index
             :method: :get
