@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    yext-api (0.1.9)
+    yext-api (0.1.10)
       memoist (~> 0)
       rails (> 4)
       spyke (~> 5)
@@ -194,17 +194,14 @@ DEPENDENCIES
   cornucopia
   gem-release
   hashie
-  loofah (~> 2.2.1)
-  rails-html-sanitizer (~> 1.0.4)
   rake (~> 10)
   rspec
   rspec-rails
   simplecov
   simplecov-rcov
-  sprockets (~> 3.7.2)
   vcr
   webmock
   yext-api!
 
 BUNDLED WITH
-   1.16.2
+   1.16.4
