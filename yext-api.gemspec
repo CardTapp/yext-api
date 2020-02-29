@@ -39,7 +39,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "codecov"
   spec.add_development_dependency "cornucopia"
   spec.add_development_dependency "hashie"
-  spec.add_development_dependency "rake", "~> 10"
+  spec.add_development_dependency "rake", "~> 13"
   spec.add_development_dependency "rspec"
   spec.add_development_dependency "rspec_junit_formatter", "~> 0.4.1"
   spec.add_development_dependency "rspec-rails"
