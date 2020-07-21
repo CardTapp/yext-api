@@ -25,7 +25,8 @@ module Yext
           end
 
           def ensure_relation(klass)
-            [Yext::Api::KnowledgeApi::AccountSettings::Account, Yext::Api::AdministrativeApi::Account].each do |account_class|
+            %w[Yext::Api::KnowledgeApi::AccountSettings::Account Yext::Api::AdministrativeApi::Account].each do |account_class_name|
+              account_class = account_class_name.constantize
               next if account_class.association?(klass)
 
               klass_uri = klass.instance_variable_get(:@uri)
@@ -115,7 +116,7 @@ module Yext
 
             # account_scope means that the scope will be applied to an Account rather than a
             # relation off of an Account.
-            args[:id] = args.delete(:account_id) if account_scope
+            args[:id]         = args.delete(:account_id) if account_scope
 
             args
           end
