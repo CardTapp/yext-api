@@ -6,6 +6,8 @@
 
 # Yext::Api
 
+DEPRECATED AND NO LONGER MAINTAINED
+
 This gem provides a Rails interface with the Yext API.
 
 ## Installation
